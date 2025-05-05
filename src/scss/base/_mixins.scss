@@ -1,0 +1,15 @@
+@mixin buttonSetup ($bgColor, $textColor ,$padHor: 10px, $padVer: 10px, $marHor: 0, $marVer: 0) {
+
+    background-color: $bgColor;
+    color: $textColor;
+
+    padding-left: $padHor;
+    padding-right: $padHor;
+    padding-top: $padVer;
+    padding-bottom: $padVer;
+
+    margin-left: $marHor;
+    margin-right: $marHor;
+    margin-top: $marVer;
+    margin-bottom: $marVer;
+}

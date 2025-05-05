@@ -1,2 +1,9 @@
 @import './base';
-@import "./components"
+@import "./components";
+
+.action-button{
+    display: flex;
+    width: 200px;
+    height: 100px;
+    @include buttonSetup($actionColor, $white, )
+}
