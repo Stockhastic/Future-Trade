@@ -1,9 +1,97 @@
 @import './base';
 @import "./components";
 
-.action-button{
-    display: flex;
-    width: 200px;
-    height: 100px;
-    @include buttonSetup($actionColor, $white, )
+
+html{
+    scroll-behavior: smooth;
 }
+body {
+    // font-family: "LibreFranklin", sans-serif;
+    background-color: $primaryColor;
+    color: $white;
+}
+main {
+    margin: auto;
+    max-width:$wrapperWidth;
+    outline: 2px solid #ffffff52;
+}
+
+.primary-button{
+    display: inline-block;
+    transition: all 0.14s ease-in-out;
+    @include buttonSetup($secondaryColor, $white, 10px, 20px, 15px, 5px, 5px);
+
+    &:hover{
+        background-color: #4cdbff;
+        text-shadow: 0 0 10px #55290080;
+    }
+}
+.action-button{
+    cursor: pointer;
+    font-family: $mainFontRegular;
+    display: inline-block;
+    transition: all 0.14s ease-in-out;
+    @include buttonSetup($actionColor, $white, 10px, 20px, 15px, 5px, 5px);
+
+    &:hover{
+        background-color: #ffa52f;
+        text-shadow: 0 0 10px #55290080;
+    }
+
+    font-size: 16px;
+    // font-weight: 600;
+}
+.ui-container{
+    display: inline-block;
+    outline: 2px solid $secondaryColor;
+    border-radius: 15px;
+    margin: 10px;
+
+    & > h3{
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+        background-color: $secondaryColor;
+        color: $white;
+        border-radius: 15px 15px 0 0;
+    }
+}
+.special-text{
+    color: $specialTextColor;
+}
+.uppercase-text{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.mR50{
+    margin-right: 50px;
+}
+.section-marker{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 15px;
+    border: 1px solid #949494;
+    border-radius: 20px;
+    color: #949494;
+}
+.blurred-circle{
+    position: absolute;
+    width: 500px;
+    height: 600px;
+    background-color: $blurBGColor;
+    border-radius: 100%;
+    filter: blur(300px);
+    z-index: -100;
+}
+
+.pos-1 {
+    left:0;
+    translate: -300px 500px;
+}
+.pos-2 {
+    right: 0;
+    translate: 0 1600px;
+}
+
+

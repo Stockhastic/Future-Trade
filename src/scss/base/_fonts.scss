@@ -1,8 +1,39 @@
-// @font-face {
-//     font-family: FONT_NAME;
-//     font-weight: 400;
-//     src: url("/src/fonts/FONT_NAME.woff2") format(woff2),
-//     url("/src/fonts/FONT_NAME.woff") format(woff),
-// }
+@font-face {
+    font-family: "LibreFranklin-Regular";
+    font-weight: 400;
+    src:url("/src/fonts/LibreFranklin-Regular.ttf") format(truetype),
+        // url("/src/fonts/FONT_NAME.woff2") format(woff2),
+        // url("/src/fonts/FONT_NAME.woff") format(woff)
+}
+@font-face {
+    font-family: "LibreFranklin-Light";
+    src:url("/src/fonts/LibreFranklin-Light.ttf") format(truetype),
+        // url("/src/fonts/FONT_NAME.woff2") format(woff2),
+        // url("/src/fonts/FONT_NAME.woff") format(woff)
+}
+@font-face {
+    font-family: "LibreFranklin-Medium";
+    src:url("/src/fonts/LibreFranklin-Medium.ttf") format(truetype),
+        // url("/src/fonts/FONT_NAME.woff2") format(woff2),
+        // url("/src/fonts/FONT_NAME.woff") format(woff)
+}
 
-
+h1 {
+    font-size: 64px;
+    font-family: $mainFontMedium;
+}
+h2 {
+    font-size: 32px;
+    font-family: $mainFontRegular;
+}
+h3 {
+    font-size: 24px;
+    font-family: $mainFontLight;
+}
+p {
+    font-size: 16px;
+    font-family: $mainFontLight;
+}
+a {
+    font-family: $mainFontLight;
+}

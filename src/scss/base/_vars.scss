@@ -1,15 +1,30 @@
 // // Colors
-
 $primaryColor:#22232D;
 $secondaryColor:#01B9FB;
 $actionColor: #FA8022;
 
+$specialTextColor: #01B9FB;
+$blurBGColor: #73B8F8;
+
+$infocardBGColor: #1E1F2A;
+$infocardBorderColor: #13152C;
+$infocardDividerColor: #ffffff63;
+
 $black: #000;
 $white: #fff;
 
-// Screens
+// Nums and Sizes
+$wrapperWidth: 1310px;
+$headerLogoSize: 150px;
 
-$mobile: "min-width: 375px"; 
-$tablet: "min-width: 768px";
-$desktop: "min-width: 1024px";
+// Screens
+$mobileScreen: "max-width: 768px"; 
+$tabletScreen: "max-width: 1024px";
+$desktopScreen: "min-width: 4000px";
+
+// Fonts
+$mainFontRegular: "LibreFranklin-Regular", sans-serif;
+$mainFontLight: "LibreFranklin-Light", sans-serif;
+$mainFontMedium: "LibreFranklin-Medium", sans-serif;
+
 

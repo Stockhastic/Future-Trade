@@ -1,0 +1,84 @@
+@import "../base/vars";
+
+.solutions-block {
+    position: relative;
+    margin: 80px auto;
+    outline: 1px solid pink;
+
+    &__container {
+        display: grid;
+        grid-template-areas: 
+        "title title"
+        "subtitle subtitle"
+        "infocards statements";
+        column-gap: 20px;
+        grid-template-columns: 1fr 1.5fr;
+    }
+
+    &__title {
+        grid-area: title;
+    }
+    &__subtitle {
+        grid-area: subtitle;
+        margin-bottom: 15px;
+    }
+    &__infocards {
+        grid-area: infocards;
+    }
+    &__statements {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        grid-area: statements;
+    }
+}
+
+.infocard{
+    position: relative;
+    background-color: $infocardBGColor;
+    border: 1px solid $infocardBorderColor;
+    transition: all 0.13s ease-in-out;
+    border-radius: 13px;
+    padding: 25px 20px;
+    margin: 10px 0;
+
+    &__header{
+        margin-bottom: 10px;
+    }
+    &__line{
+        top: 0;
+        height: 1px;
+        background-color: $infocardDividerColor;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    &__text{
+        margin-left: 10px;
+        margin-bottom: 5px;
+        &::before{
+            content: "•";
+            margin-right: 10px;
+            color: #fff;
+        }
+    }
+}
+
+.statement{
+    display: flex;
+    margin: 15px;
+
+    &__icon{
+        height: 69px;
+        width: 74px;    
+    }
+
+    &__text{
+        text-align:justify;
+        & > h2{
+            font-size: 24px;
+            margin-bottom: 5px;
+            font-family: $mainFontMedium;
+        }
+    }
+}
+

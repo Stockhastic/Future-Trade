@@ -1,0 +1,45 @@
+@import "../base/vars";
+
+.hero-block {
+    outline: 1px solid red;
+    margin: 80px auto;
+    display: flex;
+
+    &__container {
+        align-content: center;
+    }
+    &__title {
+        margin-bottom: 25px;
+        line-height: 0.8;
+        letter-spacing: -0.05em;
+    }
+    &__subtitle {
+        margin-bottom: 25px;       
+    }
+    &__description {
+        margin-bottom: 15px;
+    }
+
+    &__image {
+        margin: 0 auto;
+        max-width: 508px;
+    }
+}
+
+@media ($mobileScreen) {
+    .hero-block {
+        flex-direction: column;
+        align-items: center;
+        margin: 50px auto;
+    }
+    .hero-block__image {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    .hero-block__container {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+}

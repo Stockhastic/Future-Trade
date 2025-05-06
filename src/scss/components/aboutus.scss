@@ -1,0 +1,73 @@
+@import "../base/vars";
+
+.aboutus-block{
+    position: relative;
+    outline: 1px solid greenyellow;
+    &__container{
+        display: grid;
+        grid-template-areas:
+        "title title"
+        "subtitle subtitle"
+        "stats illustration";
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+    }
+    &__title{
+        grid-area: title;
+    }
+    &__subtitle{
+        grid-area: subtitle;
+        margin-bottom: 40px;
+    }
+    &__stats{
+        position: relative;
+        grid-area: stats;
+    }
+    &__illustration{
+        grid-area: illustration;
+        max-width: 100%;
+        margin: auto;
+    }
+}
+.stat{
+    &__text{
+        margin-left: 30px;
+        & > h2 {
+            font-size: 38px;
+            font-family: $mainFontMedium;
+            margin-bottom: 10px;
+        }
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        margin: 30px;
+    }
+    &__icon{
+        margin-right: 30px;
+    }
+}
+.vertical-line{
+    position: absolute;
+    top: 0;
+    left: 26%;
+    width: 2px;
+    height: 100%;
+    background-color: #555555;
+    transform: translateX(-50%);
+}
+
+
+@media ($mobileScreen) {
+    .aboutus-block{
+        &__container{
+            grid-template-areas:
+            "title"
+            "subtitle"
+            "stats"
+            "illustration";
+            grid-template-columns: 1fr;
+            column-gap: 10px;
+        }
+    }
+}
