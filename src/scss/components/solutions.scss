@@ -3,7 +3,7 @@
 .solutions-block {
     position: relative;
     margin: 80px auto;
-    outline: 1px solid pink;
+    // outline: 1px solid pink;
 
     &__container {
         display: grid;
@@ -37,10 +37,17 @@
     position: relative;
     background-color: $infocardBGColor;
     border: 1px solid $infocardBorderColor;
-    transition: all 0.13s ease-in-out;
+    transition: all 0.23s ease-in-out;
     border-radius: 13px;
     padding: 25px 20px;
     margin: 10px 0;
+
+    // &:hover{
+    //     background: linear-gradient(
+    //         80deg,
+    //         #ffc038 0%,
+    //         $actionColor 100%);
+    // }
 
     &__header{
         margin-bottom: 10px;
@@ -61,11 +68,21 @@
             color: #fff;
         }
     }
+    &__description{
+        color: $grey;
+        font-size: 16px;
+        margin: 6px 0;
+        text-align: justify;
+    }
+    &__item{
+        margin: 18px 0;
+    }
 }
 
 .statement{
     display: flex;
     margin: 15px;
+    align-content: center;
 
     &__icon{
         height: 69px;

@@ -132,7 +132,6 @@ nav {
 }
 
 .hero-block {
-  outline: 1px solid red;
   margin: 80px auto;
   display: flex;
 }
@@ -173,7 +172,6 @@ nav {
 }
 .aboutus-block {
   position: relative;
-  outline: 1px solid greenyellow;
 }
 .aboutus-block__container {
   display: grid;
@@ -232,10 +230,16 @@ nav {
     column-gap: 10px;
   }
 }
+footer {
+  max-width: 1310px;
+  margin: auto;
+  margin-top: 150px;
+  outline: 1px solid coral;
+}
+
 .solutions-block {
   position: relative;
   margin: 80px auto;
-  outline: 1px solid pink;
 }
 .solutions-block__container {
   display: grid;
@@ -264,7 +268,7 @@ nav {
   position: relative;
   background-color: #1E1F2A;
   border: 1px solid #13152C;
-  transition: all 0.13s ease-in-out;
+  transition: all 0.23s ease-in-out;
   border-radius: 13px;
   padding: 25px 20px;
   margin: 10px 0;
@@ -288,10 +292,20 @@ nav {
   margin-right: 10px;
   color: #fff;
 }
+.infocard__description {
+  color: #919191;
+  font-size: 16px;
+  margin: 6px 0;
+  text-align: justify;
+}
+.infocard__item {
+  margin: 18px 0;
+}
 
 .statement {
   display: flex;
   margin: 15px;
+  align-content: center;
 }
 .statement__icon {
   height: 69px;
@@ -308,7 +322,103 @@ nav {
 
 .services-block {
   position: relative;
-  outline: 1px solid paleturquoise;
+}
+.services-block__subtitle {
+  margin-bottom: 25px;
+}
+
+.smaller-icon {
+  width: 50px;
+  height: 56px;
+}
+
+.middle-text {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+form {
+  margin-top: 35px;
+  font-family: "LibreFranklin-Light", sans-serif;
+}
+form > input {
+  margin-bottom: 13px;
+  border: none;
+  width: 100%;
+  font-size: 20px;
+  padding: 20px 18px;
+  color: #fff;
+  background-color: #29282C;
+  border-radius: 14px;
+}
+
+.submit-button {
+  width: 40%;
+  border: none;
+  border-radius: 12px;
+}
+
+.feedback-block {
+  position: relative;
+  margin: 80px auto;
+}
+.feedback-block__container {
+  display: grid;
+  grid-template-areas: "title title" "subtitle subtitle" "grey grey" "form contacts";
+  column-gap: 30px;
+  grid-template-columns: 1fr 1fr;
+  padding: 15px;
+}
+.feedback-block__title {
+  grid-area: title;
+  line-height: 0.8;
+  margin-bottom: 30px;
+}
+.feedback-block__subtitle {
+  grid-area: subtitle;
+  margin-bottom: 10px;
+}
+.feedback-block__grey {
+  grid-area: grey;
+  font-size: 20px;
+}
+.feedback-block__form {
+  grid-area: form;
+}
+.feedback-block__contacts {
+  margin-top: 35px;
+  grid-area: contacts;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-link {
+  font-family: "LibreFranklin-Regular", sans-serif;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.mail-link {
+  font-family: "LibreFranklin-Medium", sans-serif;
+  font-size: 24px;
+  margin: 10px;
+}
+
+.adress-grey {
+  font-family: "LibreFranklin-Light", sans-serif;
+  color: #919191;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+.social-links > a {
+  height: 100%;
+  margin-left: 5px;
+  margin-right: 10px;
 }
 
 html {
@@ -323,7 +433,6 @@ body {
 main {
   margin: auto;
   max-width: 1310px;
-  outline: 2px solid rgba(255, 255, 255, 0.3215686275);
 }
 
 .primary-button {
@@ -346,7 +455,7 @@ main {
   text-shadow: 0 0 10px rgba(85, 41, 0, 0.5019607843);
 }
 
-.action-button {
+.action-button, .submit-button {
   cursor: pointer;
   font-family: "LibreFranklin-Regular", sans-serif;
   display: inline-block;
@@ -364,7 +473,7 @@ main {
   border-radius: 10px;
   font-size: 16px;
 }
-.action-button:hover {
+.action-button:hover, .submit-button:hover {
   background-color: #ffa52f;
   text-shadow: 0 0 10px rgba(85, 41, 0, 0.5019607843);
 }
@@ -393,11 +502,8 @@ main {
   font-weight: 600;
 }
 
-.mR50 {
-  margin-right: 50px;
-}
-
 .section-marker {
+  transition: all 0.14s ease-in-out;
   position: absolute;
   right: 0;
   top: 0;
@@ -405,6 +511,11 @@ main {
   border: 1px solid #949494;
   border-radius: 20px;
   color: #949494;
+}
+.section-marker:hover {
+  background-color: #fff;
+  color: #919191;
+  border: 1px solid #919191;
 }
 
 .blurred-circle {
@@ -425,4 +536,12 @@ main {
 .pos-2 {
   right: 0;
   translate: 0 1600px;
+}
+
+.mL10 {
+  margin-left: 10px;
+}
+
+.mR50 {
+  margin-right: 50px;
 }/*# sourceMappingURL=styles.css.map */

@@ -13,7 +13,7 @@ body {
 main {
     margin: auto;
     max-width:$wrapperWidth;
-    outline: 2px solid #ffffff52;
+    // outline: 2px solid #ffffff52;
 }
 
 .primary-button{
@@ -63,10 +63,8 @@ main {
     text-transform: uppercase;
     font-weight: 600;
 }
-.mR50{
-    margin-right: 50px;
-}
 .section-marker{
+    transition: all 0.14s ease-in-out;
     position: absolute;
     right: 0;
     top: 0;
@@ -74,6 +72,12 @@ main {
     border: 1px solid #949494;
     border-radius: 20px;
     color: #949494;
+
+    &:hover{
+        background-color: $white;
+        color: $grey;
+        border: 1px solid $grey;
+    }
 }
 .blurred-circle{
     position: absolute;
@@ -92,6 +96,14 @@ main {
 .pos-2 {
     right: 0;
     translate: 0 1600px;
+}
+
+
+.mL10{
+    margin-left: 10px;
+}
+.mR50{
+    margin-right: 50px;
 }
 
 
