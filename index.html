@@ -49,21 +49,44 @@
     <div class="background-blur-gradients">
         <div class="blurred-circle pos-1"></div>
         <div class="blurred-circle pos-2"></div>
+        <div class="blurred-circle pos-3"></div>
+        <div class="blurred-circle pos-4"></div>
     </div>
+
     <header>
-        <img src="src/graphics/png/header-logo.png" class="header__logo mR50" alt="logo_here">
-        <a href="#" class="header__social-link"><img src="src/graphics/png/telegram-icon.png"
-                alt="Telegram link here"></a>
-        <a href="#" class="header__social-link"><img src="src/graphics/png/whatsapp-icon.png"
-                alt="What's App link here"></a>
-        <nav>
+        <a href="#"><img src="src/graphics/png/header-logo.png" class="header__logo mR50" alt="logo_here"></a>
+        <div class="header__socials">
+            <a href="#" class="header__social-link"><img src="src/graphics/png/telegram-icon.png" alt="Telegram link here"></a>
+            <a href="#" class="header__social-link"><img src="src/graphics/png/whatsapp-icon.png" alt="What's App link here"></a>
+        </div>
+        <button class="header__burger" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="header__nav">
             <a href="#aboutus" class="header__page-link">О компании</a>
             <a href="#solutions" class="header__page-link">Решения</a>
             <a href="#services" class="header__page-link">Услуги</a>
             <a href="#contacts" class="header__page-link">Контакты</a>
             <button class="header__form action-button">Проконсультироваться</button>
         </nav>
+
+        <div id="modal-form" class="modal hidden">
+            <div class="modal-content">
+                <button class="close-modal">&times;</button>
+                <h2>Свяжитесь с нами</h2>
+                <form class="modal-form" action="https://formspree.io/f/xvgargnk" method="POST">
+                    <input type="text" name="ФИО" placeholder="Ваше ФИО" required />
+                    <input type="tel" name="Телефон для обратной связи" placeholder="Ваш телефон для обратной связи" required />
+                    <input type="email" name="Почтовый ящик" placeholder="Ваш e-mail (не обязательно)" />
+                    <input type="submit" value="Отправить" class="submit-button" />
+                </form>
+            </div>
+        </div>
+        <div id="overlay" class="overlay hidden"></div>
     </header>
+
     <main>
         <section class="hero-block">
             <div class="hero-block__container">
@@ -316,52 +339,22 @@
             </div>      
         </section>
     </main>
+
     <footer class="footer-block">
-        <img src="src/graphics/png/header-logo.png" alt="footer-logo-here" class="footer-block__logo">
-        <nav>
-            <a href="#aboutus" class="footer-block__page-link">О компании</a>
-            <a href="#solutions" class="footer-block__page-link">Решения</a>
-            <a href="#services" class="footer-block__page-link">Услуги</a>
-            <a href="#contacts" class="footer-block__page-link">Контакты</a>
-        </nav>
-        <h3 class="footer-block__text">© 2025. Все права защищены</h3>
+        <div class="footer-block__wrapper">
+            <a href="#"><img src="src/graphics/png/header-logo.png" alt="footer-logo-here" class="footer-block__logo"></a>
+            <div class="footer-block__container">    
+                <nav class="footer-block__nav">
+                <a href="#aboutus" class="footer-block__page-link">О компании</a>
+                <a href="#solutions" class="footer-block__page-link">Решения</a>
+                <a href="#services" class="footer-block__page-link">Услуги</a>
+                <a href="#contacts" class="footer-block__page-link">Контакты</a>
+                </nav>
+                <h3 class="footer-block__text">© <span id="current-year"></span>. Все права защищены</h3>
+            </div>
+        </div>
     </footer>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
     <script src="script.js"></script>
 </body>
 

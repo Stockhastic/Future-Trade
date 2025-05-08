@@ -96,8 +96,17 @@ main {
 .pos-2 {
     right: 0;
     translate: 0 1600px;
+    filter: blur(500px);
 }
-
+.pos-3 {
+    left:0;
+    translate: -300px 2500px;
+}
+.pos-4 {
+    right: 0;
+    translate: 0 3400px;
+    filter: blur(600px);
+}
 
 .mL10{
     margin-left: 10px;
