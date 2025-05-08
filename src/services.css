@@ -1,0 +1,24 @@
+.services-block {
+  position: relative;
+}
+.services-block__subtitle {
+  margin-bottom: 25px;
+}
+.services-block > .infocard {
+  margin: 30px 0;
+}
+.services-block > .infocard > .infocard__statements {
+  margin-top: 45px;
+  margin-bottom: 30px;
+}
+
+.smaller-icon {
+  width: 50px;
+  height: 56px;
+}
+
+.middle-text {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}/*# sourceMappingURL=services.css.map */
