@@ -21,4 +21,13 @@
   margin-left: 10px;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .services-block {
+    margin: 0 20px;
+  }
+  .services-block > .section-marker {
+    translate: 0 -40px;
+  }
 }/*# sourceMappingURL=services.css.map */

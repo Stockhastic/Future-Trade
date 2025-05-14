@@ -53,9 +53,32 @@
 }
 
 @media (max-width: 768px) {
+  .aboutus-block > .section-marker {
+    margin: 20px;
+    translate: 0 -50px;
+  }
+  .aboutus-block__title {
+    margin-bottom: 20px;
+  }
+  .aboutus-block__subtitle {
+    max-width: 100%;
+  }
+  .aboutus-block__stats {
+    max-width: 100%;
+  }
   .aboutus-block__container {
     grid-template-areas: "title" "subtitle" "stats" "illustration";
     grid-template-columns: 1fr;
     column-gap: 10px;
+    margin: 0 20px;
+  }
+  .aboutus-block__illustration > img {
+    max-width: 100%;
+  }
+  .stat__text > h2 {
+    font-size: 30px;
+  }
+  .stat__text > h3 {
+    font-size: 20px;
   }
 }/*# sourceMappingURL=aboutus.css.map */

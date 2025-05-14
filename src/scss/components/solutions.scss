@@ -91,3 +91,26 @@
     }
 }
 
+@media ($mobileScreen) {
+    .solutions-block {
+        & > .section-marker{
+            margin: 20px;
+            translate: 0 -50px;;
+        }
+
+        &__container {
+            margin: 20px;
+            grid-template-areas:
+            "title"
+            "subtitle"
+            "infocards"
+            "statements";
+            grid-template-columns: 1fr;
+            column-gap: 10px;
+        }
+
+        &__statements{
+            margin-top: 30px;
+        }
+    }
+}

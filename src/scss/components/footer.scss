@@ -33,3 +33,15 @@ footer {
         height: 30px;
     }
 }
+
+@media ($mobileScreen) {
+    .footer-block{
+        &__container{
+            justify-content: center;
+        }
+        &__nav{
+            height: 100%;
+            flex-flow: column nowrap;
+        }
+    }
+}

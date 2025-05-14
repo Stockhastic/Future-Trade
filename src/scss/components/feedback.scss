@@ -65,3 +65,12 @@
         margin-right: 10px;
     }
 }
+
+@media ($mobileScreen) {
+    .feedback-block {
+        margin: 0 20px;
+        & > .section-marker{
+            translate: 0 -10px;
+        }
+    }
+}
