@@ -486,7 +486,7 @@ form > input {
 }
 
 .submit-button {
-  width: 40%;
+  max-width: 40%;
   border: none;
   border-radius: 12px;
 }
@@ -570,8 +570,5 @@ form > input {
     grid-template-areas: "title" "subtitle" "grey" "form" "contacts";
     grid-template-columns: 1fr;
     column-gap: 10px;
-  }
-  .submit_button {
-    max-width: 100%;
   }
 }/*# sourceMappingURL=index.css.map */

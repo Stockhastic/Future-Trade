@@ -116,5 +116,8 @@ main {
 }
 
 @media ($tabletScreen) {
-    
+    main {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }

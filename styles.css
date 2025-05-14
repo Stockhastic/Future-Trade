@@ -665,9 +665,6 @@ form > input {
     grid-template-columns: 1fr;
     column-gap: 10px;
   }
-  .submit_button {
-    max-width: 100%;
-  }
 }
 html {
   scroll-behavior: smooth;
@@ -804,4 +801,11 @@ main {
 
 .mR50 {
   margin-right: 50px;
+}
+
+@media (max-width: 1390px) {
+  main {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }/*# sourceMappingURL=styles.css.map */
