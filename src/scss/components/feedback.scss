@@ -72,5 +72,16 @@
         & > .section-marker{
             translate: 0 -10px;
         }
+        &__container {
+            margin: 20px;
+            grid-template-areas:
+            "title"
+            "subtitle"
+            "grey"
+            "form"
+            "contacts";
+            grid-template-columns: 1fr;
+            column-gap: 10px;
+        }
     }
 }

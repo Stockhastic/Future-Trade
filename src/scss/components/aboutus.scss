@@ -62,16 +62,18 @@
 
 @media ($mobileScreen) {
     .aboutus-block{
+        display: none;
         & > .section-marker{
             margin: 20px;
             translate: 0 -50px;
         }
         &__title{
             margin-bottom: 20px;
-        }
-        &__subtitle{
             max-width: 100%;
         }
+        // &__subtitle{
+        //     // display: none;
+        // }
         &__stats{
             max-width: 100%;
         }

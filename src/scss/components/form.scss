@@ -16,7 +16,13 @@ form{
 
 .submit-button {
     @extend .action-button;
-    width: 40%;
+        max-width: 40%;
     border: none;
     border-radius: 12px;
+}
+
+@media ($mobileScreen) {
+    .submit-button{
+        max-width: 100%;
+    }
 }
