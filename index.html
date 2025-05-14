@@ -59,19 +59,24 @@
             <a href="#" class="header__social-link"><img src="src/graphics/png/telegram-icon.png" alt="Telegram link here"></a>
             <a href="#" class="header__social-link"><img src="src/graphics/png/whatsapp-icon.png" alt="What's App link here"></a>
         </div>
-        <button class="header__burger" aria-label="Открыть меню">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
         <nav class="header__nav">
+            
+            <div class="header__nav-header">
+                <a href="#"><img src="src/graphics/png/header-logo.png" class="header__logo-nav" alt="logo_here"></a>
+                <button class="nav-close" aria-label="Закрыть меню">&times;</button>
+            </div>
+
             <a href="#aboutus" class="header__page-link">О компании</a>
             <a href="#solutions" class="header__page-link">Решения</a>
             <a href="#services" class="header__page-link">Услуги</a>
             <a href="#contacts" class="header__page-link">Контакты</a>
             <button class="header__form action-button">Проконсультироваться</button>
         </nav>
-
+        <button class="burger" aria-label="Открыть меню" aria-expanded="false">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+        </button>
         <div id="modal-form" class="modal hidden">
             <div class="modal-content">
                 <button class="close-modal">&times;</button>
@@ -240,15 +245,17 @@
             <div class="infocard">
                 <h2 class="infocard__header">1. Выступим в качестве промежуточного звена</h2>
                 <div class="infocard__line"></div>
-                <div class="infocard__item">
-                    <h3>Мы можем заключить договор купли-продажи с поставщиком.</h3>
-                    <p class="infocard__description">Процесс осуществляется через нашу компанию в Армении, если есть сложности с заключением прямого контракта
-                    или поставщик не готов продавать/отгружать грузы напрямую в Россию.</p>
-                </div>
-                <div class="infocard__item">
-                    <h3>Выступим в качестве платежного агента.</h3>
-                    <p class="infocard__description">На основании агентского контракта, если трудности состоят только в проведенеии платежей. 
-                    Наличие открытых счетов в различных банках позволяет нам проводить платежи фактически без задержек</p>
+                <div class="infocard__items">
+                    <div class="infocard__item">
+                        <h3>Мы можем заключить договор купли-продажи с поставщиком.</h3>
+                        <p class="infocard__description">Процесс осуществляется через нашу компанию в Армении, если есть сложности с заключением прямого контракта
+                        или поставщик не готов продавать/отгружать грузы напрямую в Россию.</p>
+                    </div>
+                    <div class="infocard__item">
+                        <h3>Выступим в качестве платежного агента.</h3>
+                        <p class="infocard__description">На основании агентского контракта, если трудности состоят только в проведенеии платежей. 
+                        Наличие открытых счетов в различных банках позволяет нам проводить платежи фактически без задержек</p>
+                    </div>
                 </div>
                 <div class="infocard__statements">
                     <div class="statement">
