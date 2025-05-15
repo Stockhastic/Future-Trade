@@ -74,13 +74,14 @@
             max-width: 100%;
             font-size: $mobileH1Size;
         }
-        // &__subtitle{
-        //     // display: none;
-        // }
+        &__subtitle{
+            font-size: 16px;
+        }
         &__stats{
             max-width: 100%;
         }
         &__container{
+            // max-width: 100%;
             grid-template-areas:
             "title"
             "subtitle"
@@ -103,5 +104,8 @@
         & > h3{
             font-size: 20px;
         }
+    }
+    .stat__icon{
+        width: 80px
     }
 }

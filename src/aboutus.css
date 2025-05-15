@@ -65,6 +65,9 @@
     max-width: 100%;
     font-size: 45px;
   }
+  .aboutus-block__subtitle {
+    font-size: 16px;
+  }
   .aboutus-block__stats {
     max-width: 100%;
   }
@@ -82,5 +85,8 @@
   }
   .stat__text > h3 {
     font-size: 20px;
+  }
+  .stat__icon {
+    width: 80px;
   }
 }/*# sourceMappingURL=aboutus.css.map */

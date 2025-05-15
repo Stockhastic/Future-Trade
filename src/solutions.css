@@ -84,7 +84,7 @@
 
 @media (max-width: 768px) {
   .solutions-block {
-    margin: 50px 10px;
+    margin: 50px 1px;
   }
   .solutions-block > .section-marker {
     margin: 20px;

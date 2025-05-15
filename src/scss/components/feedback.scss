@@ -68,7 +68,7 @@
 
 @media ($mobileScreen) {
     .feedback-block {
-        margin: 30px 10px;
+        margin: 30px 1px;
         &__title{
             font-size: $mobileH1Size;
         }
@@ -87,6 +87,12 @@
             grid-template-columns: 1fr;
             column-gap: 10px;
             padding: 0;
+        }
+        &__grey {
+            font-size: 16px;
+        }
+        &__form > input {
+            font-size: 16px;
         }
     }
     .social-links__telegram > img{

@@ -119,10 +119,14 @@ main {
 
 @media ($tabletScreen) {
     main, header {
-        margin: 0 40px;
+        margin: 0 10px;
     }
     .hero-block__image {
         margin: auto;
+    }
+
+    .pos-1,.pos-2,.pos-3, .pos-4{
+        background-color:  #73b8f844;
     }
 }
 
