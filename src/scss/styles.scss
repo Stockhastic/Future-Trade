@@ -79,6 +79,8 @@ main {
         border: 1px solid $grey;
     }
 }
+
+// 
 .blurred-circle{
     position: absolute;
     width: 500px;
@@ -113,5 +115,14 @@ main {
 }
 .mR50{
     margin-right: 50px;
+}
+
+@media ($tabletScreen) {
+    main, header {
+        margin: 0 40px;
+    }
+    .hero-block__image {
+        margin: auto;
+    }
 }
 

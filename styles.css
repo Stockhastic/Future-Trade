@@ -339,6 +339,9 @@ nav {
   grid-area: illustration;
   margin: auto;
 }
+.aboutus-block__illustration > img {
+  max-width: 100%;
+}
 
 .stat__text {
   margin-left: 30px;
@@ -368,9 +371,6 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .aboutus-block {
-    display: none;
-  }
   .aboutus-block > .section-marker {
     margin: 20px;
     translate: 0 -50px;
@@ -536,6 +536,7 @@ footer {
   }
   .solutions-block__statements > .statement {
     margin: 0;
+    margin-top: 20px;
   }
   .solutions-block__title {
     font-size: 45px;
@@ -712,6 +713,11 @@ form > input {
     width: 200px;
   }
 }
+@media (max-width: 1390px) {
+  .submit-button {
+    max-width: 80%;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -847,4 +853,13 @@ main {
 
 .mR50 {
   margin-right: 50px;
+}
+
+@media (max-width: 1390px) {
+  main, header {
+    margin: 0 40px;
+  }
+  .hero-block__image {
+    margin: auto;
+  }
 }/*# sourceMappingURL=styles.css.map */

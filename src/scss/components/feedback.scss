@@ -96,3 +96,9 @@
         }
     }
 }
+
+@media ($tabletScreen) {
+    .submit-button {
+        max-width: 80%;
+    }
+}

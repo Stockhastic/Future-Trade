@@ -24,6 +24,9 @@
   grid-area: illustration;
   margin: auto;
 }
+.aboutus-block__illustration > img {
+  max-width: 100%;
+}
 
 .stat__text {
   margin-left: 30px;
@@ -53,9 +56,6 @@
 }
 
 @media (max-width: 768px) {
-  .aboutus-block {
-    display: none;
-  }
   .aboutus-block > .section-marker {
     margin: 20px;
     translate: 0 -50px;
