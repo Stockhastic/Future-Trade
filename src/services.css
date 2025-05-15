@@ -25,9 +25,28 @@
 
 @media (max-width: 768px) {
   .services-block {
-    margin: 0 20px;
+    margin: 0 10px;
   }
   .services-block > .section-marker {
     translate: 0 -40px;
+  }
+  .services-block__title {
+    font-size: 45px;
+    margin-bottom: 10px;
+  }
+  .infocard__header {
+    font-size: 26px;
+  }
+  .infocard__statements > .statement {
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+  }
+  .infocard__item > h3 {
+    font-size: 16px;
+  }
+  .statement__icon {
+    width: 50px;
+    height: 60px;
   }
 }/*# sourceMappingURL=services.css.map */

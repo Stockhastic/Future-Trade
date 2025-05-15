@@ -31,15 +31,18 @@
         flex-direction: column;
         align-items: center;
         margin: 50px auto;
-    }
-    .hero-block__image {
-        margin: 0 auto;
-        max-width: 100%;
-    }
-    .hero-block__container {
+        // padding: 0 10px;
+
+        &__image {
+            margin: 0 auto;
+            max-width: 100%;
+        }
+        &__container {
         text-align: center;
-        margin: 0 auto;
-        padding: 0 20px;
+        margin: 0 auto; 
+        }
+        &__title{
+            font-size: $mobileH1Size;
+        }
     }
-    
 }

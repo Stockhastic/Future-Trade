@@ -34,6 +34,8 @@
   .hero-block__container {
     text-align: center;
     margin: 0 auto;
-    padding: 0 20px;
+  }
+  .hero-block__title {
+    font-size: 45px;
   }
 }/*# sourceMappingURL=hero.css.map */
