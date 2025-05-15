@@ -705,6 +705,12 @@ form > input {
     column-gap: 10px;
     padding: 0;
   }
+  .social-links__telegram > img {
+    transition: all 0.13s ease-in-out;
+  }
+  .social-links__telegram > img:hover {
+    width: 200px;
+  }
 }
 html {
   scroll-behavior: smooth;

@@ -596,18 +596,25 @@ form > input {
 
 @media (max-width: 768px) {
   .feedback-block {
-    margin-top: 30px;
-    margin: 0 20px;
+    margin: 30px 10px;
   }
   .feedback-block__title {
     font-size: 45px;
   }
   .feedback-block > .section-marker {
-    translate: 0 -10px;
+    translate: 0 -30px;
   }
   .feedback-block__container {
+    margin-top: 50px;
     grid-template-areas: "title" "subtitle" "grey" "form" "contacts";
     grid-template-columns: 1fr;
     column-gap: 10px;
+    padding: 0;
+  }
+  .social-links__telegram > img {
+    transition: all 0.13s ease-in-out;
+  }
+  .social-links__telegram > img:hover {
+    translate: 0 19px;
   }
 }/*# sourceMappingURL=index.css.map */
