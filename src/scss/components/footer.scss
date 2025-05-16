@@ -20,8 +20,10 @@ footer {
         @extend .header__page-link;
     }
     &__text{
+
         font-family: $mainFontMedium;
         font-size: 20px;
+
     }
     &__container{
         display: flex;
@@ -42,6 +44,9 @@ footer {
         &__nav{
             height: 100%;
             flex-flow: column nowrap;
+        }
+        &__text{
+            display: none;
         }
     }
 }

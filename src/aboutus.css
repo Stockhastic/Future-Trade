@@ -56,9 +56,12 @@
 }
 
 @media (max-width: 768px) {
+  .aboutus-block {
+    margin: 60px auto;
+  }
   .aboutus-block > .section-marker {
-    margin: 20px;
-    translate: 0 -50px;
+    margin: 5px;
+    translate: 0 -60px;
   }
   .aboutus-block__title {
     margin-bottom: 20px;
@@ -67,6 +70,7 @@
   }
   .aboutus-block__subtitle {
     font-size: 16px;
+    margin-bottom: 10px;
   }
   .aboutus-block__stats {
     max-width: 100%;
@@ -75,18 +79,33 @@
     grid-template-areas: "title" "subtitle" "stats" "illustration";
     grid-template-columns: 1fr;
     column-gap: 10px;
-    margin: 0 20px;
+  }
+  .aboutus-block__illustration {
+    max-width: 70%;
   }
   .aboutus-block__illustration > img {
-    max-width: 100%;
+    margin: auto;
+  }
+  .stat__text {
+    margin: 0;
   }
   .stat__text > h2 {
-    font-size: 30px;
+    font-size: 20px;
+    text-align: center;
   }
   .stat__text > h3 {
-    font-size: 20px;
+    font-size: 16px;
+    text-align: center;
   }
   .stat__icon {
-    width: 80px;
+    width: 90px;
+    margin: 0;
+  }
+  .stat__item {
+    margin: 15px 0;
+    flex-direction: column;
+  }
+  .vertical-line {
+    display: none;
   }
 }/*# sourceMappingURL=aboutus.css.map */

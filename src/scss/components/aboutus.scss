@@ -64,10 +64,10 @@
 
 @media ($mobileScreen) {
     .aboutus-block{
-        // display: none;
+        margin: 60px auto;
         & > .section-marker{
-            margin: 20px;
-            translate: 0 -50px;
+            margin: 5px;
+            translate: 0 -60px;
         }
         &__title{
             margin-bottom: 20px;
@@ -76,6 +76,7 @@
         }
         &__subtitle{
             font-size: 16px;
+            margin-bottom: 10px;
         }
         &__stats{
             max-width: 100%;
@@ -89,23 +90,37 @@
             "illustration";
             grid-template-columns: 1fr;
             column-gap: 10px;
-            margin: 0 20px;
+            // margin: 0 20px;
         }
         &__illustration{
+            max-width: 70%;
             & > img {
-                max-width: 100%;
+                margin: auto;
             }
         }
     }
-    .stat__text{
-        & > h2{
-            font-size: 30px;
+    .stat{
+        &__text{
+            margin: 0;
+            & > h2{
+                font-size: 20px;
+                text-align: center;
+            }
+            & > h3{
+                font-size: 16px;
+                text-align: center;
+            }
         }
-        & > h3{
-            font-size: 20px;
+        &__icon{
+            width: 90px;
+            margin: 0;
+        }
+        &__item{
+            margin: 15px 0;
+            flex-direction: column;
         }
     }
-    .stat__icon{
-        width: 80px
+    .vertical-line {
+        display: none;
     }
 }

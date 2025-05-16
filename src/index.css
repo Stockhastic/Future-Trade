@@ -205,7 +205,7 @@ nav {
   .hero-block {
     flex-direction: column;
     align-items: center;
-    margin: 50px auto;
+    margin: 30px auto;
   }
   .hero-block__image {
     margin: 0 auto;
@@ -245,6 +245,9 @@ nav {
   grid-area: illustration;
   margin: auto;
 }
+.aboutus-block__illustration > img {
+  max-width: 100%;
+}
 
 .stat__text {
   margin-left: 30px;
@@ -274,9 +277,6 @@ nav {
 }
 
 @media (max-width: 768px) {
-  .aboutus-block {
-    display: none;
-  }
   .aboutus-block > .section-marker {
     margin: 20px;
     translate: 0 -50px;
@@ -284,6 +284,10 @@ nav {
   .aboutus-block__title {
     margin-bottom: 20px;
     max-width: 100%;
+    font-size: 45px;
+  }
+  .aboutus-block__subtitle {
+    font-size: 16px;
   }
   .aboutus-block__stats {
     max-width: 100%;
@@ -302,6 +306,9 @@ nav {
   }
   .stat__text > h3 {
     font-size: 20px;
+  }
+  .stat__icon {
+    width: 80px;
   }
 }
 footer {
@@ -426,7 +433,7 @@ footer {
 
 @media (max-width: 768px) {
   .solutions-block {
-    margin: 50px 10px;
+    margin: 50px 1px;
   }
   .solutions-block > .section-marker {
     margin: 20px;
@@ -442,6 +449,7 @@ footer {
   }
   .solutions-block__statements > .statement {
     margin: 0;
+    margin-top: 20px;
   }
   .solutions-block__title {
     font-size: 45px;
@@ -481,7 +489,7 @@ footer {
 
 @media (max-width: 768px) {
   .services-block {
-    margin: 0 10px;
+    margin: 0 1px;
   }
   .services-block > .section-marker {
     translate: 0 -40px;
@@ -495,7 +503,6 @@ footer {
   }
   .infocard__statements > .statement {
     flex-direction: column;
-    align-items: center;
     margin: 15px 0;
   }
   .infocard__item > h3 {
@@ -596,7 +603,7 @@ form > input {
 
 @media (max-width: 768px) {
   .feedback-block {
-    margin: 30px 10px;
+    margin: 30px 1px;
   }
   .feedback-block__title {
     font-size: 45px;
@@ -611,10 +618,21 @@ form > input {
     column-gap: 10px;
     padding: 0;
   }
+  .feedback-block__grey {
+    font-size: 16px;
+  }
+  .feedback-block__form > input {
+    font-size: 16px;
+  }
   .social-links__telegram > img {
     transition: all 0.13s ease-in-out;
   }
   .social-links__telegram > img:hover {
-    translate: 0 19px;
+    width: 200px;
+  }
+}
+@media (max-width: 1390px) {
+  .submit-button {
+    max-width: 80%;
   }
 }/*# sourceMappingURL=index.css.map */

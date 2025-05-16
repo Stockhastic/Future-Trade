@@ -105,6 +105,9 @@
   .solutions-block__title {
     font-size: 45px;
   }
+  .solutions-block__subtitle {
+    margin: 20px auto;
+  }
   .statement__text {
     text-align: start;
     flex: 1 1 auto; /* разрешаем блоку расти и ужиматься */
