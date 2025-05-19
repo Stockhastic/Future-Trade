@@ -111,3 +111,22 @@ const observer3 = new IntersectionObserver((entries) => {
 { threshold: 0.2 });
 
 elements3.forEach(el => observer3.observe(el));
+
+// Трекеры для составной формы
+// 1. Пользователь начал заполнять любую форму
+document.querySelectorAll('form input, form textarea').forEach(el => {
+    el.addEventListener('input', () => {
+    ym(101927491, 'reachGoal', 'form_start');
+    }, 
+    { once: true });
+});
+
+// 2. Пользователь отправил модальную форму
+document.querySelector('.modal-form')?.addEventListener('submit', () => {
+    ym(101927491, 'reachGoal', 'form_submit_header');
+});
+
+// 3. Пользователь отправил форму в блоке feedback
+document.querySelector('.feedback-block__form')?.addEventListener('submit', () => {
+    ym(101927491, 'reachGoal', 'form_submit_feedback');
+});
