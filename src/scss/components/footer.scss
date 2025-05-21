@@ -41,6 +41,9 @@ footer {
             justify-content: center;
             align-items: flex-start;
         }
+        &_mobile-hidden{
+            display: none;
+        }
     }
     &__addres-text{
         margin: 5px 0;

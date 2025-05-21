@@ -525,6 +525,9 @@ footer {
   justify-content: center;
   align-items: flex-start;
 }
+.footer-block__container_mobile-hidden {
+  display: none;
+}
 .footer-block__addres-text {
   margin: 5px 0;
   font-size: 16px;
