@@ -504,6 +504,11 @@ footer {
 .footer-block__logo {
   max-width: 130px;
 }
+.footer-block__title {
+  font-family: "LibreFranklin-Medium", sans-serif;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
 .footer-block__text {
   font-family: "LibreFranklin-Medium", sans-serif;
   font-size: 20px;
@@ -513,6 +518,25 @@ footer {
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
+}
+.footer-block__container_addres {
+  margin-left: 40px;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: flex-start;
+}
+.footer-block__addres-text {
+  margin: 5px 0;
+  font-size: 16px;
+}
+.footer-block__addres-text::before {
+  content: url("src/graphics/png/marker.png");
+  background-size: cover;
+  display: inline-block;
+  margin-right: 5px;
+}
+.footer-block__addres-text:hover {
+  text-decoration: underline;
 }
 .footer-block__nav {
   height: 30px;

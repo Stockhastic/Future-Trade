@@ -344,6 +344,9 @@ footer {
 .footer-block__logo {
   max-width: 130px;
 }
+.footer-block__title {
+  font-size: 30px;
+}
 .footer-block__text {
   font-family: "LibreFranklin-Medium", sans-serif;
   font-size: 20px;

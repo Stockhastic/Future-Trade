@@ -19,6 +19,11 @@ footer {
     &__page-link{
         @extend .header__page-link;
     }
+    &__title{
+        font-family: $mainFontMedium;
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
     &__text{
 
         font-family: $mainFontMedium;
@@ -30,6 +35,25 @@ footer {
         flex-direction: column;
         align-items: flex-end;
         justify-content: space-between;
+        &_addres{
+            margin-left: 40px;
+            flex-grow: 1;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    }
+    &__addres-text{
+        margin: 5px 0;
+        font-size: 16px;
+        &::before{
+            content: url("src/graphics/png/marker.png");
+            background-size: cover;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        &:hover{
+            text-decoration: underline;
+        }
     }
     &__nav {
         height: 30px;
