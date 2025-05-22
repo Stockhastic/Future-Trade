@@ -41,9 +41,6 @@ footer {
             justify-content: center;
             align-items: flex-start;
         }
-        &_mobile-hidden{
-            display: none;
-        }
     }
     &__addres-text{
         margin: 5px 0;
@@ -67,6 +64,9 @@ footer {
     .footer-block{
         &__container{
             justify-content: center;
+            &_mobile-hidden{
+            display: none;
+            }
         }
         &__nav{
             height: 100%;
