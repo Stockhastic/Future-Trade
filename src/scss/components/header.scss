@@ -43,7 +43,6 @@ nav {
         width: 130px;
         margin-right: 50px;
     }
-
 }
 
 // Кнопка консультации
@@ -109,7 +108,6 @@ nav {
         border-radius: 5px;
     }
 }
-
 .header__nav-header {
     display: none;
     justify-content: space-between;
@@ -130,6 +128,37 @@ nav {
         cursor: pointer;
         padding: 0;
     }
+}
+
+// Lang Switcher
+.lang-dropdown {
+    margin-left: 1rem;
+    position: relative;
+    transition: all 0.13s ease-in-out;
+    &__content{
+        display: none;;
+        translate: 0 1px;
+        position: absolute;
+        border-radius: 10px;
+        // border: 1px solid $grey;
+        right: 0;
+        background-color: #152742;
+        & > a {
+            display: flex;
+            padding: 0.8rem 1.4rem;
+            &:hover{
+                background-color: #141e41;
+                border-radius: 10px;
+            }
+            & > img {
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+.lang-dropdown.active .lang-dropdown__content {
+    display: block;
 }
 
 @media ($mobileScreen) {
@@ -194,6 +223,16 @@ nav {
     }
     .burger {
         display: block;
+    }
+    .lang-dropdown {
+        margin-top: 2rem;
+        &__content {
+            margin-top: 1rem;
+            translate: 28% 0;
+            & > a {
+                font-size: 1.6rem;
+            }
+        }
     }
 }
 

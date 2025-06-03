@@ -1,0 +1,19 @@
+html[lang='en'] h1{
+    line-height: 1.0
+};
+
+html[lang='en'] .statement__text > h3{
+    font-size: 1rem;
+};
+
+html[lang='am'] {
+    & h1{
+        line-height: 1.0
+    }
+    & .hero-block__title{
+        font-size: 3.1rem;
+    }
+    & .aboutus-block__title{
+        font-size: 3.1rem;
+    }
+};

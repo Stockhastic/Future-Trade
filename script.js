@@ -120,22 +120,17 @@ document.querySelectorAll('form input, form textarea').forEach(el => {
     }, 
     { once: true });
 });
-
 // 2. Пользователь отправил модальную форму
 document.querySelector('.modal-form')?.addEventListener('submit', () => {
     ym(101927491, 'reachGoal', 'form_submit_header');
 });
-
 // 3. Пользователь отправил форму в блоке feedback
 document.querySelector('.feedback-block__form')?.addEventListener('submit', () => {
     ym(101927491, 'reachGoal', 'form_submit_feedback');
 });
 
 
-
-
 // TG Bot сбор данных и отправка
-
 function collectClientData() {
     const now = new Date();
     return {
@@ -156,7 +151,6 @@ function collectClientData() {
         }
     };
 }
-
 function buildMessage(info, label, value) {
     return `${label} <b>${value}</b> на сайте <b>Future Trade!</b>
 
@@ -194,7 +188,6 @@ document.querySelectorAll('.messenger-link').forEach(link => {
         .catch(error => console.error('Ошибка:', error));
     });
 });
-
 document.querySelectorAll('a[href^="tel:"]').forEach(link => {
     link.addEventListener('click', function(event) {
         const phoneNumber = this.getAttribute('href').replace('tel:', '');
@@ -208,7 +201,6 @@ document.querySelectorAll('a[href^="tel:"]').forEach(link => {
         });
     });
 });
-
 document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
     link.addEventListener('click', function(event) {
         const emailAddress = this.getAttribute('href').replace('mailto:', '');
@@ -220,5 +212,22 @@ document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
             headers: {'Content-Type': 'application/x-www-form-urlencoded'},
             body: new URLSearchParams({message})
         });
+    });
+});
+
+// Переключатель языка
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.querySelector('.lang-dropdown');
+
+    dropdown.addEventListener('click', function(event) {
+        event.stopPropagation(); // чтобы не сработал document click
+        dropdown.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function(event) {
+    // если клик вне дропдауна — закрываем
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('active');
+        }
     });
 });
