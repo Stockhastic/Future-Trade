@@ -236,6 +236,13 @@ nav {
     }
 }
 
-
-
-
+@media ($tabletScreen) {
+    .header {
+        &__page-link {
+            font-size: 0.9rem;
+        }
+    }
+    .action-button {
+        font-size: 0.6rem;
+    }
+}

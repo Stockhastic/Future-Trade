@@ -395,6 +395,14 @@ nav {
     font-size: 1.6rem;
   }
 }
+@media (max-width: 1390px) {
+  .header__page-link, .footer-block__page-link {
+    font-size: 0.9rem;
+  }
+  .action-button, .submit-button {
+    font-size: 0.6rem;
+  }
+}
 .hero-block {
   margin: 80px auto;
   display: flex;
