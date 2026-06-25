@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/src/css/styles.css">
 
     <!-- FAVICON -->
     <!-- Favicon Standart -->
@@ -82,8 +82,13 @@
     <header>
         <a href="#"><img src="src/graphics/png/header-logo.png" class="header__logo" alt="logo_here"></a>
         <div class="header__socials">
+<<<<<<< Updated upstream
             <a href="https://t.me/futuretradelogistic" class="header__social-link"><img src="src/graphics/png/telegram-icon.png" alt="Telegram link here" width="47px" ></a>
             <a href="https://api.whatsapp.com/send/?app_absent=0&phone=37443689363&text=Здраствуйте%21&type=phone_number" class="header__social-link"><img src="src/graphics/png/whatsapp-icon.png" alt="What's App link here" width="47px" ></a>
+=======
+            <a href="https://t.me/futuretradellc" class="header__social-link messenger-link" data-messenger="Telegram"><img src="src/graphics/png/telegram-icon.png" alt="Telegram link here" width="47px" ></a>
+            <a href="https://api.whatsapp.com/send/?app_absent=0&phone=37443689363&text=Здраствуйте%21&type=phone_number" class="header__social-link messenger-link" data-messenger="WhatsApp"><img src="src/graphics/png/whatsapp-icon.png" alt="What's App link here" width="47px" ></a>
+>>>>>>> Stashed changes
         </div>
         <nav class="header__nav">
             
@@ -107,11 +112,18 @@
             <div class="modal-content">
                 <button class="close-modal">&times;</button>
                 <h2>Свяжитесь с нами</h2>
-                <form class="modal-form" action="https://formspree.io/f/xanoayry" method="POST">
-                    <input type="text" name="ФИО" placeholder="Ваше ФИО" required />
-                    <input type="tel" name="Телефон для обратной связи" placeholder="Ваш телефон для обратной связи" required />
-                    <input type="email" name="Почтовый ящик" placeholder="Ваш e-mail (не обязательно)" />
-                    <input type="submit" value="Отправить" class="submit-button" />
+                <form class="modal-form hidden"
+                    action="send-form.php"
+                    method="POST"
+                    accept-charset="UTF-8">
+
+                    <div class="form-status" aria-live="polite"></div>
+
+                    <input type="text" name="full_name" placeholder="Ваше имя" required />
+                    <input type="tel" name="phone" placeholder="Номер телефона" required />
+                    <input type="email" name="email" placeholder="E-mail (необязательно)" />
+
+                    <input type="submit" value="Отправить заявку" class="submit-button" />
                 </form>
             </div>
         </div>
@@ -269,7 +281,7 @@
             <h1 class="services-block__title hidden-2"><span class="special-text">Как мы работаем?</span></h1>
             <h3 class="services-block__subtitle hidden-2">Мы готовы предложить вам две основные схемы взаимодействия.</h3>
             <div class="infocard hidden">
-                <h2 class="infocard__header hidden-2">1. Выступим в качестве промежуточного звена</h2>
+                <h2 class="infocard__header infocard__header--highlighted hidden-2">1. Выступим в качестве промежуточного звена</h2>
                 <div class="infocard__line hidden"></div>
                 <div class="infocard__items">
                     <div class="infocard__item hidden-2">
@@ -305,7 +317,7 @@
                 </div>    
             </div>
             <div class="infocard hidden">
-                <h2 class="infocard__header hidden-2">2. Полный пакет под ключ</h2>
+                <h2 class="infocard__header infocard__header--highlighted hidden-2">2. Полный пакет под ключ</h2>
                 <div class="infocard__line"></div>
                 <div class="infocard__item hidden-2">
                     <h3>Полностью возьмем на себя все процессы по закупке и доставке.</h3>
@@ -353,19 +365,33 @@
                 <h3 class="feedback-block__subtitle hidden-2">Консультация бесплатно!</h3>
                 <h3 class="feedback-block__grey hidden-2">Заполните форму обратной связи. <br>Мы свяжемся с вами и обсудим все интересующие вас детали и внутренние процессы.</h3>
                 
-                <form class="feedback-block__form hidden" action="https://formspree.io/f/xanoayry" method="POST">
-                    <input type="text" name="ФИО" placeholder="Ваше ФИО" required />
-                    <input type="tel" name="Телефон для обратной связи" placeholder="Ваш телефон для обратной связи" required />
-                    <input type="email" name="Почтовый ящик" placeholder="Ваш e-mail (не обязательно)"  />
-                    <input type="submit" value="Обсудить детали" class="submit-button" />
+                <form class="feedback-block__form hidden"
+                    action="send-form.php"
+                    method="POST"
+                    accept-charset="UTF-8">
+
+                    <div class="form-status" aria-live="polite"></div>
+
+                    <input type="text" name="full_name" placeholder="Ваше имя" required />
+                    <input type="tel" name="phone" placeholder="Номер телефона" required />
+                    <input type="email" name="email" placeholder="E-mail (необязательно)" />
+                    <!-- <textarea name="message" placeholder="Комментарий (необязательно)" rows="3"></textarea> -->
+
+                    <input type="text" name="hp" class="hp-field" autocomplete="off" tabindex="-1" />
+
+                    <input type="submit" value="Отправить заявку" class="submit-button" />
                 </form>
                 
                 <div class="feedback-block__contacts hidden">
-                    <a class="phone-link hidden-2" href="tel:+79645377228">+7 (964) 537-72-28</a>
                     <a class="mail-link hidden-2" href="mailto:info@fttrade.am">info@fttrade.am</a>
                     <div class="social-links hidden-2">
+<<<<<<< Updated upstream
                         <a href="https://t.me/futuretradelogistic" class="social-links__telegram"><img src="src/graphics/png/telegram-icon.png" alt="Telegram link here" width="47px"></a>
                         <a href="https://api.whatsapp.com/send/?app_absent=0&phone=37443689363&text=Здраствуйте%21&type=phone_number" class="social-links__whatsapp"><img src="src/graphics/png/whatsapp-icon.png" alt="What's App link here" width="47px" ></a>
+=======
+                        <a href="https://t.me/futuretradellc" class="social-links__telegram messenger-link" data-messenger="Telegram"><img src="src/graphics/png/telegram-icon.png" alt="Telegram link here" width="47px"></a>
+                        <a href="https://api.whatsapp.com/send/?app_absent=0&phone=37443689363&text=Здраствуйте%21&type=phone_number" class="social-links__whatsapp messenger-link" data-messenger="WhatsApp"><img src="src/graphics/png/whatsapp-icon.png" alt="What's App link here" width="47px" ></a>
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div>      
@@ -377,7 +403,6 @@
             <a href="#"><img src="src/graphics/png/header-logo.png" alt="footer-logo-here" class="footer-block__logo"></a>
             <div class="footer-block__container footer-block__container_addres">
                 <h3 class="footer-block__title">Наши офисы</h3>
-                <a href="https://yandex.com/maps/-/CHv3nB61" class="footer-block__addres-text">Россия, Москва, Сибирский проезд 2 ст. 2</a>
                 <a href="https://yandex.com/maps/-/CHv3nVic" class="footer-block__addres-text">Армения, Ереван, Вагарша Вагаршяна 12/1</a>
             </div>
             <div class="footer-block__container footer-block__container_mobile-hidden">    

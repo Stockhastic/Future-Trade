@@ -112,6 +112,7 @@ const observer3 = new IntersectionObserver((entries) => {
 
 elements3.forEach(el => observer3.observe(el));
 
+<<<<<<< Updated upstream
 // Трекеры для составной формы
 // 1. Пользователь начал заполнять любую форму
 document.querySelectorAll('form input, form textarea').forEach(el => {
@@ -130,3 +131,176 @@ document.querySelector('.modal-form')?.addEventListener('submit', () => {
 document.querySelector('.feedback-block__form')?.addEventListener('submit', () => {
     ym(101927491, 'reachGoal', 'form_submit_feedback');
 });
+=======
+document.querySelectorAll('form[action="send-form.php"]').forEach(form => {
+    form.addEventListener('submit', () => {
+        const info = collectClientData();
+        const formData = new FormData(form);
+        const sourceLabel = form.getAttribute('data-telegram-label')
+            || (form.classList.contains('modal-form') ? 'в модальной форме сайта' :
+                form.classList.contains('feedback-block__form') ? 'в блоке контакты' :
+                'Форма отправки');
+
+        const baseMessage = buildMessage(info, '📨 Заявка с формы', sourceLabel);
+
+        const fullNameRaw = (formData.get('full_name') || '').trim();
+        const phoneRaw = (formData.get('phone') || '').trim();
+        const emailRaw = (formData.get('email') || '').trim();
+        const commentRaw = (formData.get('message') || '').trim();
+
+        const fullName = escapeHtml(fullNameRaw || '—');
+        const phone = escapeHtml(phoneRaw || '—');
+        const email = emailRaw !== '' ? escapeHtml(emailRaw) : 'Не указан';
+        const comment = commentRaw !== '' ? `\n<b>Комментарий:</b> ${escapeHtml(commentRaw)}` : '';
+
+        const message = `${baseMessage}
+
+👋 <b>ФИО:</b> ${fullName}
+📞 <b>Телефон для связи:</b> ${phone}
+📥 <b>E-mail:</b> ${email}${comment}`;
+
+        const params = new URLSearchParams({ message });
+        let delivered = false;
+        if (navigator.sendBeacon) {
+            const blob = new Blob([params.toString()], { type: 'application/x-www-form-urlencoded' });
+            delivered = navigator.sendBeacon('notify.php', blob);
+        }
+
+        if (!delivered) {
+            fetch('notify.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: params
+            }).catch(err => console.error('Failed to notify Telegram:', err));
+        }
+
+        if (typeof ym === 'function') {
+            const goal = form.classList.contains('modal-form')
+                ? 'form_submit_header'
+                : form.classList.contains('feedback-block__form')
+                    ? 'form_submit_feedback'
+                    : null;
+
+            if (goal) {
+                try {
+                    ym(101927491, 'reachGoal', goal);
+                } catch (error) {
+                    console.warn('Metrica goal error:', error);
+                }
+            }
+        }
+    });
+});
+
+
+// TG Bot сбор данных и отправка
+function collectClientData() {
+    const now = new Date();
+    return {
+        date: now.toLocaleDateString('ru-RU'),
+        time: now.toLocaleTimeString('ru-RU', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        }),
+        device: /Mobi|Android/i.test(navigator.userAgent) ? 'Мобильное' : 'Десктоп',
+        screen: `${window.innerWidth}px`,
+        lang: (navigator.language || navigator.userLanguage).toUpperCase(),
+        userAgent: navigator.userAgent.replace(/</g, '&lt;').replace(/>/g, '&gt;').slice(0, 400),
+        utm: {
+            source: new URLSearchParams(window.location.search).get('utm_source') || 'Нет данных о метке',
+            medium: new URLSearchParams(window.location.search).get('utm_medium') || 'Нет данных о метке',
+            campaign: new URLSearchParams(window.location.search).get('utm_campaign') || 'Нет данных о метке'
+        }
+    };
+}
+function escapeHtml(value) {
+    return value.replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function buildMessage(info, label, value) {
+    return `${label} <b>${value}</b> на сайте <b>Future Trade!</b>
+
+📅 <b>Дата:</b> ${info.date}
+🕒 <b>Время:</b> ${info.time}
+📱 <b>Устройство:</b> ${info.device}
+🖥 <b>Ширина экрана:</b> ${info.screen}
+🌍 <b>Язык браузера:</b> ${info.lang}
+
+🔗 <b>UTM Source:</b> ${info.utm.source}
+🔗 <b>UTM Medium:</b> ${info.utm.medium}
+🔗 <b>UTM Campaign:</b> ${info.utm.campaign}
+
+🧠 <b>Браузер:</b>
+<code>${info.userAgent}</code>`;
+}
+
+document.querySelectorAll('.messenger-link').forEach(link => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        const messengerName = this.dataset.messenger;
+        const info = collectClientData();
+        const message = buildMessage(info, '🔔 Переход в', messengerName);
+
+        fetch('notify.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: new URLSearchParams({message})
+        })
+        .then(response => response.text())
+        .then(result => {
+            console.log(result);
+            window.location.href = this.href;
+        })
+        .catch(error => console.error('Ошибка:', error));
+    });
+});
+document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+    link.addEventListener('click', function(event) {
+        const phoneNumber = this.getAttribute('href').replace('tel:', '');
+        const info = collectClientData();
+        const message = buildMessage(info, '📞 Клик по телефону:', phoneNumber);
+
+        fetch('notify.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: new URLSearchParams({message})
+        });
+    });
+});
+document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+    link.addEventListener('click', function(event) {
+        const emailAddress = this.getAttribute('href').replace('mailto:', '');
+        const info = collectClientData();
+        const message = buildMessage(info, '✉️ Клик по почте:', emailAddress);
+
+        fetch('notify.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: new URLSearchParams({message})
+        });
+    });
+});
+
+// Переключатель языка
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdown = document.querySelector('.lang-dropdown');
+
+    dropdown.addEventListener('click', function(event) {
+        event.stopPropagation(); // чтобы не сработал document click
+        dropdown.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function(event) {
+    // если клик вне дропдауна — закрываем
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+});
+
+>>>>>>> Stashed changes

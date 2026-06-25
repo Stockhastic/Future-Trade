@@ -46,7 +46,7 @@ footer {
         margin: 5px 0;
         font-size: 16px;
         &::before{
-            content: url("src/graphics/png/marker.png");
+            content: url("/src/graphics/png/marker.png");
             background-size: cover;
             display: inline-block;
             margin-right: 5px;

@@ -159,6 +159,24 @@ a {
     transition-delay: 0.4s;
   }
 }
+html[lang=en] h1 {
+  line-height: 1;
+}
+
+html[lang=en] .statement__text > h3 {
+  font-size: 1rem;
+}
+
+html[lang=am] h1 {
+  line-height: 1;
+}
+html[lang=am] .hero-block__title {
+  font-size: 3.1rem;
+}
+html[lang=am] .aboutus-block__title {
+  font-size: 3.1rem;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -284,6 +302,35 @@ nav {
   padding: 0;
 }
 
+.lang-dropdown {
+  margin-left: 1rem;
+  position: relative;
+  transition: all 0.13s ease-in-out;
+}
+.lang-dropdown__content {
+  display: none;
+  translate: 0 1px;
+  position: absolute;
+  border-radius: 10px;
+  right: 0;
+  background-color: #152742;
+}
+.lang-dropdown__content > a {
+  display: flex;
+  padding: 0.8rem 1.4rem;
+}
+.lang-dropdown__content > a:hover {
+  background-color: #141e41;
+  border-radius: 10px;
+}
+.lang-dropdown__content > a > img {
+  margin: 0 10px;
+}
+
+.lang-dropdown.active .lang-dropdown__content {
+  display: block;
+}
+
 @media (max-width: 768px) {
   header {
     height: 150px;
@@ -336,6 +383,24 @@ nav {
   }
   .burger {
     display: block;
+  }
+  .lang-dropdown {
+    margin-top: 2rem;
+  }
+  .lang-dropdown__content {
+    margin-top: 1rem;
+    translate: 28% 0;
+  }
+  .lang-dropdown__content > a {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 1390px) {
+  .header__page-link, .footer-block__page-link {
+    font-size: 0.9rem;
+  }
+  .action-button, .submit-button {
+    font-size: 0.6rem;
   }
 }
 .hero-block {
@@ -530,7 +595,7 @@ footer {
   font-size: 16px;
 }
 .footer-block__addres-text::before {
-  content: url("src/graphics/png/marker.png");
+  content: url("/src/graphics/png/marker.png");
   background-size: cover;
   display: inline-block;
   margin-right: 5px;
@@ -699,6 +764,10 @@ footer {
   align-items: center;
 }
 
+.statement__text > h3 {
+  font-size: 1rem;
+}
+
 @media (max-width: 768px) {
   .services-block {
     margin: 0 1px;
@@ -712,10 +781,6 @@ footer {
   }
   .infocard__header {
     font-size: 26px;
-  }
-  .infocard__header--highlighted {
-    background-color: #999;
-    padding: 1rem;
   }
   .infocard__statements > .statement {
     flex-direction: column;
@@ -987,6 +1052,23 @@ main {
 
 .mR50 {
   margin-right: 50px;
+}
+
+.infocard__header--highlighted {
+  background-color: #fff;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: #22232D;
+  border-radius: 1rem;
+}
+
+.hp-field {
+  display: none;
+}
+
+.thankyou-block {
+  justify-content: center;
+  height: 40vh;
 }
 
 @media (max-width: 1390px) {

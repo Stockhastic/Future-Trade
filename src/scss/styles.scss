@@ -1,3 +1,4 @@
+@use "./base/vars";
 @import './base';
 @import "./components";
 
@@ -115,6 +116,23 @@ main {
 }
 .mR50{
     margin-right: 50px;
+}
+
+.infocard__header--highlighted{
+    background-color: #fff;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: vars.$primaryColor;
+    border-radius: 1rem;
+}
+
+
+.hp-field{
+    display: none;
+}
+.thankyou-block{
+    justify-content: center;
+    height: 40vh;
 }
 
 @media ($tabletScreen) {
