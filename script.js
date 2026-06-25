@@ -121,16 +121,15 @@ document.querySelectorAll('form input, form textarea').forEach(el => {
     }, 
     { once: true });
 });
-
 // 2. Пользователь отправил модальную форму
 document.querySelector('.modal-form')?.addEventListener('submit', () => {
     ym(101927491, 'reachGoal', 'form_submit_header');
 });
-
 // 3. Пользователь отправил форму в блоке feedback
 document.querySelector('.feedback-block__form')?.addEventListener('submit', () => {
     ym(101927491, 'reachGoal', 'form_submit_feedback');
 });
+<<<<<<< HEAD
 =======
 document.querySelectorAll('form[action="send-form.php"]').forEach(form => {
     form.addEventListener('submit', () => {
@@ -191,6 +190,8 @@ document.querySelectorAll('form[action="send-form.php"]').forEach(form => {
         }
     });
 });
+=======
+>>>>>>> b8f62f5e96657e606e6ed0065eaf56ebe3683a91
 
 
 // TG Bot сбор данных и отправка
@@ -214,6 +215,7 @@ function collectClientData() {
         }
     };
 }
+<<<<<<< HEAD
 function escapeHtml(value) {
     return value.replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
@@ -222,6 +224,8 @@ function escapeHtml(value) {
         .replace(/'/g, '&#39;');
 }
 
+=======
+>>>>>>> b8f62f5e96657e606e6ed0065eaf56ebe3683a91
 function buildMessage(info, label, value) {
     return `${label} <b>${value}</b> на сайте <b>Future Trade!</b>
 
@@ -301,6 +305,10 @@ document.addEventListener('DOMContentLoaded', function() {
             dropdown.classList.remove('active');
         }
     });
+<<<<<<< HEAD
 });
 
 >>>>>>> Stashed changes
+=======
+});
+>>>>>>> b8f62f5e96657e606e6ed0065eaf56ebe3683a91

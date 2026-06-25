@@ -1,14 +1,21 @@
 <?php
 
+<<<<<<< HEAD
 $token = "7541718082:AAHtSzXdNfvQ08S1giXBL0fM5CNLyCd13X4";
+=======
+$token = "8033883938:AAGETUPbAMFWlwD1aOjtZZRQnT_waEVg-Gc";
+>>>>>>> b8f62f5e96657e606e6ed0065eaf56ebe3683a91
 
 // ID чата: Armbiz Consulting Clients
 $chat_id = "-4063573063";
 
+<<<<<<< HEAD
 // ID чата: Future Trade директ
 // $chat_id = "-4970315324";
 
 
+=======
+>>>>>>> b8f62f5e96657e606e6ed0065eaf56ebe3683a91
 if (isset($_POST['message'])) {
     $message = $_POST['message'];
 
