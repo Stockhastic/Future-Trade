@@ -112,25 +112,15 @@ const observer3 = new IntersectionObserver((entries) => {
 
 elements3.forEach(el => observer3.observe(el));
 
-<<<<<<< Updated upstream
 // Трекеры для составной формы
-// 1. Пользователь начал заполнять любую форму
 document.querySelectorAll('form input, form textarea').forEach(el => {
     el.addEventListener('input', () => {
-    ym(101927491, 'reachGoal', 'form_start');
-    }, 
-    { once: true });
+        if (typeof ym === 'function') {
+            ym(101927491, 'reachGoal', 'form_start');
+        }
+    }, { once: true });
 });
-// 2. Пользователь отправил модальную форму
-document.querySelector('.modal-form')?.addEventListener('submit', () => {
-    ym(101927491, 'reachGoal', 'form_submit_header');
-});
-// 3. Пользователь отправил форму в блоке feedback
-document.querySelector('.feedback-block__form')?.addEventListener('submit', () => {
-    ym(101927491, 'reachGoal', 'form_submit_feedback');
-});
-<<<<<<< HEAD
-=======
+
 document.querySelectorAll('form[action="send-form.php"]').forEach(form => {
     form.addEventListener('submit', () => {
         const info = collectClientData();
@@ -190,8 +180,6 @@ document.querySelectorAll('form[action="send-form.php"]').forEach(form => {
         }
     });
 });
-=======
->>>>>>> b8f62f5e96657e606e6ed0065eaf56ebe3683a91
 
 
 // TG Bot сбор данных и отправка
@@ -215,7 +203,6 @@ function collectClientData() {
         }
     };
 }
-<<<<<<< HEAD
 function escapeHtml(value) {
     return value.replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
@@ -224,8 +211,6 @@ function escapeHtml(value) {
         .replace(/'/g, '&#39;');
 }
 
-=======
->>>>>>> b8f62f5e96657e606e6ed0065eaf56ebe3683a91
 function buildMessage(info, label, value) {
     return `${label} <b>${value}</b> на сайте <b>Future Trade!</b>
 
@@ -293,6 +278,9 @@ document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
 // Переключатель языка
 document.addEventListener('DOMContentLoaded', function() {
     const dropdown = document.querySelector('.lang-dropdown');
+    if (!dropdown) {
+        return;
+    }
 
     dropdown.addEventListener('click', function(event) {
         event.stopPropagation(); // чтобы не сработал document click
@@ -305,10 +293,4 @@ document.addEventListener('DOMContentLoaded', function() {
             dropdown.classList.remove('active');
         }
     });
-<<<<<<< HEAD
 });
-
->>>>>>> Stashed changes
-=======
-});
->>>>>>> b8f62f5e96657e606e6ed0065eaf56ebe3683a91

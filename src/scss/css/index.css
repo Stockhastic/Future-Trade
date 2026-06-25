@@ -206,11 +206,6 @@ nav {
   .burger {
     display: block;
   }
-<<<<<<< HEAD:src/scss/css/index.css
-<<<<<<< Updated upstream:src/index.css
-=======
-=======
->>>>>>> b8f62f5e96657e606e6ed0065eaf56ebe3683a91:src/index.css
   .lang-dropdown {
     margin-top: 2rem;
   }
@@ -224,17 +219,11 @@ nav {
 }
 @media (max-width: 1390px) {
   .header__page-link, .footer-block__page-link {
-<<<<<<< HEAD:src/scss/css/index.css
     font-size: 0.9rem;
   }
   .action-button, .submit-button {
     font-size: 0.6rem;
   }
->>>>>>> Stashed changes:src/scss/css/index.css
-=======
-    font-size: 1rem;
-  }
->>>>>>> b8f62f5e96657e606e6ed0065eaf56ebe3683a91:src/index.css
 }
 .hero-block {
   margin: 80px auto;
