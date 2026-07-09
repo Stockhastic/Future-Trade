@@ -1,109 +1,171 @@
 .aboutus-block {
-  margin-top: 130px;
-  margin-bottom: 130px;
+  margin: 120px auto;
   position: relative;
 }
 .aboutus-block__container {
   display: grid;
   grid-template-areas: "title title" "subtitle subtitle" "stats illustration";
-  grid-template-columns: 1fr 1fr;
-  column-gap: 10px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: 22px clamp(28px, 4.5vw, 64px);
+  align-items: stretch;
 }
 .aboutus-block__title {
   grid-area: title;
+  margin: 0;
 }
 .aboutus-block__subtitle {
   grid-area: subtitle;
-  margin-bottom: 40px;
+  margin: 0;
+  color: #B8C0CF;
+  font-family: "Mulish", sans-serif;
 }
 .aboutus-block__stats {
   position: relative;
   grid-area: stats;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-self: stretch;
 }
 .aboutus-block__illustration {
   grid-area: illustration;
-  margin: auto;
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  justify-self: stretch;
+  width: 100%;
+  padding: clamp(18px, 2.5vw, 30px);
+  border: 1px solid #485160;
+  border-radius: 24px;
+  background: #303441;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
 }
 .aboutus-block__illustration > img {
-  max-width: 100%;
+  width: min(100%, 430px);
+  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.22));
+}
+.aboutus-block__principles {
+  grid-column: 1/-1;
+  display: grid;
+  gap: 10px;
+  align-self: stretch;
+  margin-top: 0;
+  padding: 24px;
+  border: 1px solid #485160;
+  border-radius: 16px;
+  background: #303441;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.2);
+}
+.aboutus-block__principles h3 {
+  font-family: "Mulish", sans-serif;
+  color: #fff;
 }
 
 .stat__text {
-  margin-left: 30px;
+  margin-left: 0;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .stat__text > h2 {
-  font-size: 38px;
-  font-family: "LibreFranklin-Medium", sans-serif;
-  margin-bottom: 10px;
+  font-size: clamp(24px, 2vw, 30px);
+  font-family: "Mulish", sans-serif;
+  line-height: 1.08;
+  margin-bottom: 6px;
+  color: #fff;
+  overflow-wrap: anywhere;
+}
+.stat__text > h3 {
+  color: #B8C0CF;
+  font-size: 16px;
 }
 .stat__item {
   display: flex;
+  gap: 12px;
   align-items: center;
-  margin: 30px;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid #485160;
+  border-radius: 16px;
+  background: #282B36;
 }
 .stat__icon {
-  margin-right: 30px;
+  flex: 0 0 auto;
+  width: 50px;
+  height: 50px;
+  margin-right: 0;
 }
 
 .vertical-line {
-  position: absolute;
-  top: 0;
-  left: 26%;
-  width: 2px;
-  height: 100%;
-  background-color: #555555;
-  transform: translateX(-50%);
+  display: none;
 }
 
+@media (max-width: 1024px) {
+  .aboutus-block__container {
+    grid-template-areas: "title" "subtitle" "stats" "illustration";
+    grid-template-columns: 1fr;
+  }
+  .aboutus-block__illustration {
+    width: min(100%, 560px);
+    justify-self: center;
+  }
+}
 @media (max-width: 768px) {
   .aboutus-block {
-    margin: 60px auto;
+    margin: 68px auto;
   }
   .aboutus-block > .section-marker {
-    margin: 5px;
-    translate: 0 -60px;
+    margin: 0 0 18px;
+    translate: none;
   }
   .aboutus-block__title {
-    margin-bottom: 20px;
     max-width: 100%;
-    font-size: 45px;
+    font-size: clamp(34px, 10vw, 40px);
   }
   .aboutus-block__subtitle {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin: 0;
   }
   .aboutus-block__stats {
     max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   .aboutus-block__container {
     grid-template-areas: "title" "subtitle" "stats" "illustration";
     grid-template-columns: 1fr;
-    column-gap: 10px;
+    row-gap: 24px;
   }
   .aboutus-block__illustration {
-    max-width: 70%;
+    width: min(100%, 360px);
+    max-width: 100%;
+    justify-self: center;
+    padding: 12px;
   }
   .aboutus-block__illustration > img {
     margin: auto;
+  }
+  .aboutus-block__principles {
+    padding: 20px;
   }
   .stat__text {
     margin: 0;
   }
   .stat__text > h2 {
-    font-size: 20px;
-    text-align: center;
+    font-size: 24px;
+    text-align: left;
   }
   .stat__text > h3 {
     font-size: 16px;
-    text-align: center;
+    text-align: left;
   }
   .stat__icon {
-    width: 90px;
+    width: 54px;
+    height: 54px;
     margin: 0;
   }
   .stat__item {
-    margin: 15px 0;
-    flex-direction: column;
+    margin: 0;
+    padding: 18px;
   }
   .vertical-line {
     display: none;

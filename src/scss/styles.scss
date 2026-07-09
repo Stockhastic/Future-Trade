@@ -7,36 +7,66 @@ html{
     scroll-behavior: smooth;
 }
 body {
-    // font-family: "LibreFranklin", sans-serif;
-    background-color: $primaryColor;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 12% 8%, rgba($secondaryColor, 0.15), transparent 34rem),
+        radial-gradient(circle at 88% 28%, rgba($actionColor, 0.08), transparent 30rem),
+        linear-gradient(180deg, #252935 0%, $primaryColor 42%, #1d202b 100%);
     color: $white;
 }
 main {
-    margin: auto;
+    width: min(100% - 32px, $wrapperWidth);
+    margin: 0 auto;
     max-width:$wrapperWidth;
     // outline: 2px solid #ffffff52;
 }
 
 .primary-button{
-    display: inline-block;
-    transition: all 0.14s ease-in-out;
-    @include buttonSetup($secondaryColor, $white, 10px, 20px, 15px, 5px, 5px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    border: 1px solid #5CB9D7;
+    box-shadow: 0 14px 28px rgba($secondaryColor, 0.18);
+    font-family: $mainFontMedium;
+    line-height: 1.2;
+    transition: transform 0.18s $beziere, background-color 0.18s $beziere, box-shadow 0.18s $beziere;
+    @include buttonSetup($secondaryColor, $white, $radiusSmall, 22px, 13px, 0, 0);
 
     &:hover{
         background-color: #4cdbff;
-        text-shadow: 0 0 10px #55290080;
+        box-shadow: 0 18px 34px rgba($secondaryColor, 0.26);
+        transform: translateY(-2px);
+    }
+
+    &:focus-visible{
+        outline: 3px solid rgba($secondaryColor, 0.35);
+        outline-offset: 3px;
     }
 }
 .action-button{
     cursor: pointer;
-    font-family: $mainFontRegular;
-    display: inline-block;
-    transition: all 0.14s ease-in-out;
-    @include buttonSetup($actionColor, $white, 10px, 20px, 15px, 5px, 5px);
+    font-family: $mainFontMedium;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    border: 1px solid #F2A061;
+    box-shadow: 0 16px 34px rgba($actionColor, 0.22);
+    line-height: 1.2;
+    transition: transform 0.18s $beziere, background-color 0.18s $beziere, box-shadow 0.18s $beziere;
+    @include buttonSetup($actionColor, $white, $radiusSmall, 22px, 13px, 0, 0);
 
     &:hover{
         background-color: #ffa52f;
-        text-shadow: 0 0 10px #55290080;
+        box-shadow: 0 20px 40px rgba($actionColor, 0.3);
+        transform: translateY(-2px);
+    }
+
+    &:focus-visible{
+        outline: 3px solid rgba($actionColor, 0.35);
+        outline-offset: 3px;
     }
 
     font-size: 16px;
@@ -65,64 +95,81 @@ main {
     font-weight: 600;
 }
 .section-marker{
-    transition: all 0.14s ease-in-out;
+    transition: all 0.18s $beziere;
     position: absolute;
     right: 0;
     top: 0;
-    padding: 5px 15px;
-    border: 1px solid #949494;
-    border-radius: 20px;
-    color: #949494;
+    z-index: 2;
+    padding: 7px 14px;
+    border: 1px solid #237895;
+    border-radius: 999px;
+    color: $textMutedColor;
+    background: $surfaceElevatedColor;
+    box-shadow: 0 8px 28px rgba($black, 0.16);
+    font-family: $mainFontMedium;
+    font-size: 13px;
+    line-height: 1.2;
+    scroll-margin-top: 210px;
 
     &:hover{
-        background-color: $white;
-        color: $grey;
-        border: 1px solid $grey;
+        background-color: $surfaceColor;
+        color: $white;
+        border-color: $secondaryColor;
     }
 }
 
-// 
+//
+.background-blur-gradients{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
 .blurred-circle{
     position: absolute;
-    width: 500px;
-    height: 600px;
+    width: 440px;
+    height: 440px;
     background-color: $blurBGColor;
     border-radius: 100%;
-    filter: blur(300px);
-    z-index: -100;
+    filter: blur(170px);
+    opacity: 0.28;
+    z-index: -1;
 }
 .pos-1 {
     left:0;
-    translate: -300px 500px;
+    transform: translate(-260px, 480px);
 }
 .pos-2 {
     right: 0;
-    translate: 0 1600px;
-    filter: blur(500px);
+    transform: translate(180px, 1550px);
+    filter: blur(190px);
 }
 .pos-3 {
     left:0;
-    translate: -300px 2500px;
+    transform: translate(-280px, 2500px);
 }
 .pos-4 {
     right: 0;
-    translate: 0 3400px;
-    filter: blur(600px);
+    transform: translate(180px, 3400px);
+    filter: blur(210px);
 }
 
 .mL10{
-    margin-left: 10px;
+    margin-left: 0;
 }
 .mR50{
-    margin-right: 50px;
+    margin-right: 0;
 }
 
 .infocard__header--highlighted{
-    background-color: #fff;
+    background: #163B4F;
     display: inline-block;
-    padding: 0.5rem 1rem;
-    color: vars.$primaryColor;
-    border-radius: 1rem;
+    padding: 0.55rem 0.95rem;
+    color: $white;
+    border: 1px solid #237895;
+    border-radius: 999px;
 }
 
 
@@ -134,16 +181,98 @@ main {
     height: 40vh;
 }
 
-@media ($tabletScreen) {
-    main, header {
-        margin: 0 10px;
-    }
-    .hero-block__image {
-        margin: auto;
+.backer {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 80;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba($secondaryColor, 0.48);
+    border-radius: 50%;
+    background: rgba($surfaceElevatedColor, 0.9);
+    color: $white;
+    box-shadow: 0 16px 34px rgba($black, 0.24);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.22s $beziere, transform 0.22s $beziere, border-color 0.18s $beziere, background-color 0.18s $beziere;
+    backdrop-filter: blur(10px);
+
+    span {
+        font-family: $mainFontMedium;
+        font-size: 26px;
+        line-height: 1;
+        transform: translateY(-1px);
     }
 
-    .pos-1,.pos-2,.pos-3, .pos-4{
-        background-color:  #73b8f844;
+    &:hover {
+        border-color: $secondaryColor;
+        background: $surfaceColor;
+        transform: translateY(6px);
+    }
+
+    &:focus-visible {
+        outline: 3px solid rgba($secondaryColor, 0.35);
+        outline-offset: 4px;
+    }
+
+    &--visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+
+        &:hover {
+            transform: translateY(-2px);
+        }
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .backer {
+        transition: none;
+    }
+}
+
+@media ($tabletScreen) {
+    main, header {
+        width: min(100% - 24px, $wrapperWidth);
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .pos-1,.pos-2,.pos-3, .pos-4{
+        background-color:  rgba($blurBGColor, 0.2);
+    }
+}
+
+@media ($mobileScreen) {
+    main {
+        width: min(100% - 22px, $wrapperWidth);
+    }
+
+    .section-marker {
+        position: static;
+        display: inline-flex;
+        width: fit-content;
+        margin-bottom: 18px;
+        transform: none;
+        translate: none;
+        scroll-margin-top: 34px;
+    }
+
+    .backer {
+        right: 16px;
+        bottom: 16px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media ($smallMobileScreen) {
+    main {
+        width: min(100% - 18px, $wrapperWidth);
+    }
+}

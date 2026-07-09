@@ -7,6 +7,51 @@ document.addEventListener("DOMContentLoaded", ()=> {
     }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const backer = document.querySelector(".backer");
+    if (!backer) {
+        return;
+    }
+
+    const showAfter = 500;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let isVisible = null;
+    let isTicking = false;
+
+    function setBackerVisibility(visible) {
+        if (visible === isVisible) {
+            return;
+        }
+
+        isVisible = visible;
+        backer.classList.toggle("backer--visible", visible);
+        backer.setAttribute("aria-hidden", visible ? "false" : "true");
+        backer.tabIndex = visible ? 0 : -1;
+    }
+
+    function updateBacker() {
+        setBackerVisibility(window.scrollY > showAfter);
+        isTicking = false;
+    }
+
+    window.addEventListener("scroll", () => {
+        if (!isTicking) {
+            window.requestAnimationFrame(updateBacker);
+            isTicking = true;
+        }
+    }, { passive: true });
+
+    backer.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: reduceMotion.matches ? "auto" : "smooth"
+        });
+    });
+
+    setBackerVisibility(false);
+    updateBacker();
+});
+
 // Модальное окно в header
 document.addEventListener("DOMContentLoaded", () => {
     const modal           = document.getElementById("modal-form");
@@ -20,9 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     openModalButton.addEventListener("click", () => {
       // 1) Закрываем мобильное меню, если оно открыто
-        if (nav.classList.contains("header__nav--open")) {
+        if (nav && burger && nav.classList.contains("header__nav--open")) {
             nav.classList.remove("header__nav--open");
             burger.setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
         }
       // 2) Открываем модалку как было
         modal.classList.add("show");
@@ -46,24 +92,61 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav          = document.querySelector('.header__nav');
     const closeNavBtn  = document.querySelector('.nav-close');
     const navLinks     = document.querySelectorAll('.header__page-link');
+    const desktopQuery = window.matchMedia('(min-width: 1121px)');
+
+    if (!burger || !nav) {
+        return;
+    }
 
     // Функция переключения меню
+    function openNav() {
+        burger.setAttribute('aria-expanded', 'true');
+        nav.classList.add('header__nav--open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeNav(returnFocus = false) {
+        burger.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('header__nav--open');
+        document.body.style.overflow = '';
+
+        if (returnFocus) {
+            burger.focus();
+        }
+    }
+
     function toggleNav() {
-        const isOpen = burger.getAttribute('aria-expanded') === 'true';
-        burger.setAttribute('aria-expanded', String(!isOpen));
-        nav.classList.toggle('header__nav--open');
+        if (burger.getAttribute('aria-expanded') === 'true') {
+            closeNav();
+        } else {
+            openNav();
+        }
     }
 
     burger.addEventListener('click', toggleNav);
-    closeNavBtn.addEventListener('click', toggleNav);
+    if (closeNavBtn) {
+        closeNavBtn.addEventListener('click', () => closeNav(true));
+    }
 
     // При клике на любую ссылку — тоже закрываем
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (nav.classList.contains('header__nav--open')) {
-                toggleNav();
+                closeNav();
             }
         });
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && nav.classList.contains('header__nav--open')) {
+            closeNav(true);
+        }
+    });
+
+    desktopQuery.addEventListener('change', event => {
+        if (event.matches && nav.classList.contains('header__nav--open')) {
+            closeNav();
+        }
     });
 });
 
@@ -80,7 +163,7 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 },
-{ threshold: 0.2 });
+{ threshold: 0.05 });
 
 elements.forEach(el => observer.observe(el));
 
@@ -94,7 +177,7 @@ const observer2 = new IntersectionObserver((entries) => {
         }
     });
 },
-{ threshold: 0.2 });
+{ threshold: 0.05 });
 
 elements2.forEach(el => observer2.observe(el));
 
@@ -108,7 +191,7 @@ const observer3 = new IntersectionObserver((entries) => {
         }
     });
 },
-{ threshold: 0.2 });
+{ threshold: 0.05 });
 
 elements3.forEach(el => observer3.observe(el));
 

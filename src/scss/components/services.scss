@@ -2,29 +2,49 @@
 
 .services-block{
     position: relative;
+    margin: $sectionSpacing auto;
+    display: grid;
+    row-gap: 22px;
     // outline: 1px solid paleturquoise;
 
+    &__title{
+        margin: 0;
+    }
+
     &__subtitle{
-        margin-bottom: 25px;
+        max-width: 960px;
+        margin: 0;
+        color: $textMutedColor;
+        font-family: $mainFontRegular;
     }
 
     & > .infocard {
-        margin: 30px 0;
+        display: grid;
+        gap: 18px;
+        margin: 0;
+
+        & > .infocard__header,
+        & > .infocard__line {
+            margin-bottom: 0;
+        }
 
         & > .infocard__statements {
-            margin-top: 45px;
-            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            align-items: stretch;
+            margin: 0;
         }
     }
 }
 
 .smaller-icon {
     width: 50px;
-    height: 56px;
+    height: 50px;
 }
 
 .middle-text{
-    margin-left: 10px;
+    margin-left: 0;
     display: flex;
     align-items: center;
 }
@@ -35,38 +55,50 @@
 
 @media ($mobileScreen) {
     .services-block {
-        margin: 0 1px;
+        margin: $sectionSpacingMobile auto;
         & > .section-marker{
-            translate: 0 -40px;
+            margin: 0 0 18px;
+            translate: none;
         }
         &__title {
-            font-size: $mobileH1Size;
-            margin-bottom: 10px;
+            font-size: clamp(34px, 10vw, $mobileH1Size);
+            margin: 0;
+        }
+
+        &__subtitle{
+            margin: 0;
+        }
+
+        & > .infocard {
+            margin: 0;
+
+            & > .infocard__statements {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
         }
     }
     .infocard {
 
         &__header{
-            font-size: 26px;
+            font-size: 24px;
         }
         &__statements {
             & > .statement {
-                flex-direction: column;
-                // align-items: center;
-                margin: 15px 0;
+                margin: 0;
             }
         }
 
 
         &__item {
             & > h3 {
-                font-size: 16px;
+                font-size: 17px;
             }
         }
     }
     .statement__icon{
-        width: 50px;
-        height: 60px;
+        width: 46px;
+        height: 46px;
     }
 }
 

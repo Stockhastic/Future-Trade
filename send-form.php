@@ -111,7 +111,7 @@ $messageBlock = $escapedMessage !== '' ? "<p style=\"margin:0 0 12px;\"><strong>
 $body = <<<HTML
 <!DOCTYPE html>
 <html lang="ru">
-<body style="font-family:Arial,sans-serif;
+<body style="font-family:Mulish,Arial,sans-serif;
     display: flex;
     border-radius: 20px;
     background-color:#fff;

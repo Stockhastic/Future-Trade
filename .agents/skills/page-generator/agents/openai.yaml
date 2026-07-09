@@ -1,0 +1,4 @@
+interface:
+  display_name: "Page Generator"
+  short_description: "Scaffold pages from site architecture"
+  default_prompt: "Use $page-generator to generate a semantic page scaffold from SITE_STRUCTURE.md using the existing project design system."

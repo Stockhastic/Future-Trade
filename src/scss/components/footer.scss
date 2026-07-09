@@ -1,20 +1,24 @@
 footer {
     // max-width: $wrapperWidth;
 
-    padding: 30px 10px;
+    padding: 34px 0 42px;
     // outline: 1px solid coral;
-    border-top: 1px $grey solid;
+    border-top: 1px solid $surfaceBorderColor;
+    background: $primaryColor;
 }
 
 .footer-block {
     &__wrapper{
+        width: min(100% - 32px, $wrapperWidth);
         max-width: $wrapperWidth;
         display: flex;
+        gap: 28px;
+        align-items: center;
         justify-content: space-between;
         margin: 0 auto;
     }
     &__logo {
-        max-width: 130px;
+        max-width: 120px;
     }
     &__page-link{
         @extend .header__page-link;
@@ -22,12 +26,13 @@ footer {
     &__title{
         font-family: $mainFontMedium;
         font-size: 22px;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
     &__text{
 
         font-family: $mainFontMedium;
-        font-size: 20px;
+        color: $textMutedColor;
+        font-size: 16px;
 
     }
     &__container{
@@ -44,7 +49,9 @@ footer {
     }
     &__addres-text{
         margin: 5px 0;
+        color: $textMutedColor;
         font-size: 16px;
+        line-height: 1.55;
         &::before{
             content: url("/src/graphics/png/marker.png");
             background-size: cover;
@@ -52,6 +59,7 @@ footer {
             margin-right: 5px;
         }
         &:hover{
+            color: $white;
             text-decoration: underline;
         }
     }
@@ -60,8 +68,35 @@ footer {
     }
 }
 
+@media ($tabletLayoutScreen) {
+    .footer-block {
+        &__wrapper {
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        &__container {
+            align-items: flex-start;
+
+            &_addres {
+                margin-left: 0;
+            }
+        }
+
+        &__nav {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            height: auto;
+        }
+    }
+}
+
 @media ($mobileScreen) {
     .footer-block{
+        &__wrapper{
+            width: min(100% - 22px, $wrapperWidth);
+            align-items: flex-start;
+        }
         &__container{
             justify-content: center;
             &_mobile-hidden{

@@ -1,8 +1,7 @@
 @import "../base/vars";
 
 .aboutus-block{
-    margin-top: 130px;
-    margin-bottom: 130px;
+    margin: $sectionSpacing auto;
     position: relative;
     // outline: 1px solid greenyellow;
     &__container{
@@ -11,75 +10,141 @@
         "title title"
         "subtitle subtitle"
         "stats illustration";
-        grid-template-columns: 1fr 1fr;
-        column-gap: 10px;
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        gap: 22px clamp(28px, 4.5vw, 64px);
+        align-items: stretch;
     }
     &__title{
         grid-area: title;
+        margin: 0;
     }
     &__subtitle{
         grid-area: subtitle;
-        margin-bottom: 40px;
+        margin: 0;
+        color: $textMutedColor;
+        font-family: $mainFontRegular;
     }
     &__stats{
         position: relative;
         grid-area: stats;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        align-self: stretch;
     }
     &__illustration{
         grid-area: illustration;
-        margin: auto;
+        align-self: stretch;
+        display: grid;
+        place-items: center;
+        justify-self: stretch;
+        width: 100%;
+        padding: clamp(18px, 2.5vw, 30px);
+        border: 1px solid $surfaceBorderColor;
+        border-radius: $radiusLarge;
+        background: $surfaceElevatedColor;
+        box-shadow: $shadowCard;
         & > img {
-            max-width: 100%;
+            width: min(100%, 430px);
+            filter: drop-shadow(0 18px 24px rgba($black, 0.22));
+        }
+    }
+
+    &__principles{
+        grid-column: 1 / -1;
+        display: grid;
+        gap: 10px;
+        align-self: stretch;
+        margin-top: 0;
+        padding: 24px;
+        border: 1px solid $surfaceBorderColor;
+        border-radius: $radiusMedium;
+        background: $surfaceElevatedColor;
+        box-shadow: $shadowCard;
+
+        h3 {
+            font-family: $mainFontMedium;
+            color: $white;
         }
     }
 }
 .stat{
     &__text{
-        margin-left: 30px;
+        margin-left: 0;
+        flex: 1 1 auto;
+        min-width: 0;
         & > h2 {
-            font-size: 38px;
+            font-size: clamp(24px, 2vw, 30px);
             font-family: $mainFontMedium;
-            margin-bottom: 10px;
+            line-height: 1.08;
+            margin-bottom: 6px;
+            color: $white;
+            overflow-wrap: anywhere;
+        }
+
+        & > h3{
+            color: $textMutedColor;
+            font-size: 16px;
         }
     }
     &__item{
         display: flex;
+        gap: 12px;
         align-items: center;
-        margin: 30px;
+        margin: 0;
+        padding: 18px;
+        border: 1px solid $surfaceBorderColor;
+        border-radius: $radiusMedium;
+        background: $surfaceColor;
     }
     &__icon{
-        margin-right: 30px;
+        flex: 0 0 auto;
+        width: 50px;
+        height: 50px;
+        margin-right: 0;
     }
 }
 .vertical-line{
-    position: absolute;
-    top: 0;
-    left: 26%;
-    width: 2px;
-    height: 100%;
-    background-color: #555555;
-    transform: translateX(-50%);
+    display: none;
 }
 
+@media ($tabletLayoutScreen) {
+    .aboutus-block {
+        &__container {
+            grid-template-areas:
+                "title"
+                "subtitle"
+                "stats"
+                "illustration";
+            grid-template-columns: 1fr;
+        }
+
+        &__illustration {
+            width: min(100%, 560px);
+            justify-self: center;
+        }
+    }
+}
 
 @media ($mobileScreen) {
     .aboutus-block{
-        margin: 60px auto;
+        margin: $sectionSpacingMobile auto;
         & > .section-marker{
-            margin: 5px;
-            translate: 0 -60px;
+            margin: 0 0 18px;
+            translate: none;
         }
         &__title{
-            margin-bottom: 20px;
             max-width: 100%;
-            font-size: $mobileH1Size;
+            font-size: clamp(34px, 10vw, $mobileH1Size);
         }
         &__subtitle{
             font-size: 16px;
-            margin-bottom: 10px;
+            margin: 0;
         }
         &__stats{
             max-width: 100%;
+            grid-template-columns: 1fr;
+            gap: 12px;
         }
         &__container{
             // max-width: 100%;
@@ -89,35 +154,43 @@
             "stats"
             "illustration";
             grid-template-columns: 1fr;
-            column-gap: 10px;
+            row-gap: 24px;
             // margin: 0 20px;
         }
         &__illustration{
-            max-width: 70%;
+            width: min(100%, 360px);
+            max-width: 100%;
+            justify-self: center;
+            padding: 12px;
             & > img {
                 margin: auto;
             }
+        }
+
+        &__principles{
+            padding: 20px;
         }
     }
     .stat{
         &__text{
             margin: 0;
             & > h2{
-                font-size: 20px;
-                text-align: center;
+                font-size: 24px;
+                text-align: left;
             }
             & > h3{
                 font-size: 16px;
-                text-align: center;
+                text-align: left;
             }
         }
         &__icon{
-            width: 90px;
+            width: 54px;
+            height: 54px;
             margin: 0;
         }
         &__item{
-            margin: 15px 0;
-            flex-direction: column;
+            margin: 0;
+            padding: 18px;
         }
     }
     .vertical-line {

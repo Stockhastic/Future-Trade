@@ -1,28 +1,47 @@
 form{
-    margin-top: 35px;
+    display: grid;
+    gap: 14px;
+    margin: 0;
     font-family: $mainFontLight;
-    & > input {
-        margin-bottom: 13px;
-        border: none;
+
+    & > input:not([type="submit"]),
+    & > textarea {
         width: 100%;
         font-size: 20px;
-        padding: 20px 18px;
+        margin: 0;
+        padding: 18px 18px;
+        border: 1px solid $surfaceBorderColor;
         color: $white;
         background-color: $formBGColor;
-        border-radius: 14px
+        border-radius: $radiusMedium;
+        outline: none;
+        transition: border-color 0.18s $beziere, box-shadow 0.18s $beziere, background-color 0.18s $beziere;
+
+        &::placeholder {
+            color: rgba($textMutedColor, 0.78);
+        }
+
+        &:focus {
+            border-color: rgba($secondaryColor, 0.58);
+            background-color: $formBGColor;
+            box-shadow: 0 0 0 4px rgba($secondaryColor, 0.12);
+        }
     }
 
 }
 
 .submit-button {
     @extend .action-button;
-        max-width: 40%;
+    width: auto;
+    min-width: 230px;
+    max-width: fit-content;
     border: none;
-    border-radius: 12px;
+    border-radius: $radiusSmall;
 }
 
 @media ($mobileScreen) {
     .submit-button{
+        width: 100%;
         max-width: 100%;
     }
 }

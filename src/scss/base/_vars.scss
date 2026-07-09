@@ -1,16 +1,23 @@
 // // Colors
-$primaryColor:#22232D;
-$secondaryColor:#01B9FB;
+$primaryColor: #22232D;
+$secondaryColor: #01B9FB;
 $actionColor: #FA8022;
 
-$specialTextColor: #01B9FB;
+$specialTextColor: $secondaryColor;
 $blurBGColor: #73B8F8;
 
-$infocardBGColor: #1E1F2A;
-$infocardBorderColor: #13152C;
-$infocardDividerColor: #ffffff63;
+$surfaceColor: #282B36;
+$surfaceElevatedColor: #303441;
+$surfaceSoftColor: #343947;
+$surfaceBorderColor: #485160;
+$textMutedColor: #B8C0CF;
+$textSoftColor: #E9F4FF;
 
-$formBGColor: #29282C;
+$infocardBGColor: $surfaceElevatedColor;
+$infocardBorderColor: #4B5564;
+$infocardDividerColor: #566071;
+
+$formBGColor: #292D38;
 
 $black: #000;
 $white: #fff;
@@ -18,20 +25,32 @@ $grey: #919191;
 
 // Nums and Sizes
 $wrapperWidth: 1310px;
-$headerLogoSize: 150px;
+$headerLogoSize: 130px;
 
+$radiusSmall: 10px;
+$radiusMedium: 16px;
+$radiusLarge: 24px;
+$shadowSoft: 0 24px 70px rgba(#000, 0.28);
+$shadowCard: 0 18px 45px rgba(#000, 0.2);
 
-$mobileH1Size: 45px;
+$sectionSpacing: 120px;
+$sectionSpacingMobile: 68px;
+$contentGap: 32px;
+
+$mobileH1Size: 40px;
 
 // Screens
 $mobileScreen: "max-width: 768px"; 
+$smallMobileScreen: "max-width: 560px";
+$tabletLayoutScreen: "max-width: 1024px";
+$navCollapseScreen: "max-width: 1120px";
 $tabletScreen: "max-width: 1390px";
 $desktopScreen: "min-width: 4000px";
 
 // Fonts
-$mainFontRegular: "LibreFranklin-Regular", sans-serif;
-$mainFontLight: "LibreFranklin-Light", sans-serif;
-$mainFontMedium: "LibreFranklin-Medium", sans-serif;
+$mainFontRegular: "Mulish", sans-serif;
+$mainFontLight: "Mulish", sans-serif;
+$mainFontMedium: "Mulish", sans-serif;
 
 $beziere: cubic-bezier(.26,.11,.25,1);
 

@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/css/styles.css">
 
     <!-- FAVICON -->
@@ -103,9 +106,9 @@
             <div class="lang-dropdown">
                 <button><img src="src/graphics/png/lang-switcher-icon.png" alt="lang-switcher-icon" width="42px" height="42px"></button>
                 <div class="lang-dropdown__content">
-                    <a href="index-en.html"><img src="src/graphics/png/lang-en.png" alt="lang-icon" width="15px" height="15px"> English</a>
-                    <a href="index.html"><img src="src/graphics/png/lang-ru.png" alt="lang-icon" width="15px" height="15px"> Русский</a>
-                    <a href="index-am.html"><img src="src/graphics/png/lang-am.png" alt="lang-icon" width="15px" height="15px"> Հայերեն</a>
+                    <a href="index.html?lang=en"><img src="src/graphics/png/lang-en.png" alt="lang-icon" width="15px" height="15px"> English</a>
+                    <a href="index.html?lang=ru"><img src="src/graphics/png/lang-ru.png" alt="lang-icon" width="15px" height="15px"> Русский</a>
+                    <a href="index.html?lang=am"><img src="src/graphics/png/lang-am.png" alt="lang-icon" width="15px" height="15px"> Հայերեն</a>
                 </div>
             </div>
         </nav>

@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/css/styles.css">
 
     <!-- FAVICON -->
@@ -27,24 +30,24 @@
     <!-- Android -->
     <link rel="manifest" href="src/graphics/site.webmanifest">
 
-    <title>Future Trade — Международная логистика, импорт и сопровождение платежей</title>
-    <meta name="description" content="Future Trade — надёжный партнёр в организации международных поставок, импорта, таможенного оформления и проведении трансграничных платежей. Работаем по всему миру с фокусом на Россию и ЕАЭС." />
+    <title data-i18n="[text]meta-title">Future Trade — ветеринарные препараты и лабораторная диагностика</title>
+    <meta name="description" content="FUTURE TRADE импортирует и поставляет ветеринарные лекарственные препараты, вакцины, лабораторное оборудование, диагностические тесты и расходные материалы." data-i18n="[content]meta-description" />
 
     <!-- OpenGraphics for Thumbnails -->
-    <meta property="og:title" content="Future Trade LLC | International logistic Company">
+    <meta property="og:title" content="Future Trade LLC | Ветеринария и лабораторная диагностика" data-i18n="[content]meta-og-title">
     <meta property="og:site_name" content="Future Trade">
-    <meta property="og:description" content="International Logistics">
+    <meta property="og:description" content="Надёжные решения для ветеринарии и лабораторной диагностики" data-i18n="[content]meta-og-description">
     <meta property="og:url" content="https://www.fttrade.am">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://fttrade.am/src/graphics/png/opengraph-thumbnail.png">
     <meta property="og:image:width" content="900">
     <meta property="og:image:height" content="600">
     <meta property="og:image:alt" content="Future Trade Logo">
-    <meta property="og:locale" content="ru_RU, en_EN">
+    <meta property="og:locale" content="ru_RU" data-i18n="[content]meta-og-locale">
 
     <!-- Twitter Cards  -->
-    <meta name="twitter:title" content="Future Trade | Main Page">
-    <meta name="twitter:description" content="Future Trade - Logistics all around the world">
+    <meta name="twitter:title" content="Future Trade | Ветеринария и лабораторная диагностика" data-i18n="[content]meta-twitter-title">
+    <meta name="twitter:description" content="Поставка ветеринарных препаратов, вакцин, лабораторного оборудования, диагностических тестов и расходных материалов" data-i18n="[content]meta-twitter-description">
     <meta name="twitter:image" content="https://fttrade.am/src/graphics/png/opengraph-thumbnail.png">
     <meta name="twitter:image:alt" content="Future trade Logo">
 
@@ -92,24 +95,24 @@
             
             <div class="header__nav-header">
                 <a href="#"><img src="src/graphics/png/header-logo.png" class="header__logo-nav" alt="logo_here"></a>
-                <button class="nav-close" aria-label="Закрыть меню">&times;</button>
+                <button class="nav-close" aria-label="Закрыть меню" data-i18n="[aria-label]nav-close-label">&times;</button>
             </div>
 
-            <a href="#aboutus" class="header__page-link">О компании</a>
-            <a href="#solutions" class="header__page-link">Решения</a>
-            <a href="#services" class="header__page-link">Услуги</a>
-            <a href="#contacts" class="header__page-link">Контакты</a>
-            <button class="header__form action-button">Проконсультироваться</button>
+            <a href="#aboutus" class="header__page-link" data-i18n="nav-about">О компании</a>
+            <a href="#solutions" class="header__page-link" data-i18n="nav-products">Продукция</a>
+            <a href="#services" class="header__page-link" data-i18n="nav-services">Услуги</a>
+            <a href="#contacts" class="header__page-link" data-i18n="nav-contacts">Контакты</a>
+            <button class="header__form action-button" data-i18n="nav-consultation">Получить консультацию</button>
             <div class="lang-dropdown">
-                <button><img src="src/graphics/png/lang-switcher-icon.png" alt="lang-switcher-icon" width="42px" height="42px"></button>
+                <button aria-label="Выбрать язык" data-i18n="[aria-label]lang-toggle-label"><img src="src/graphics/png/lang-switcher-icon.png" alt="lang-switcher-icon" width="42px" height="42px"></button>
                 <div class="lang-dropdown__content">
-                    <a href="index-en.html"><img src="src/graphics/png/lang-en.png" alt="lang-icon" width="15px" height="15px"> English</a>
-                    <a href="index.html"><img src="src/graphics/png/lang-ru.png" alt="lang-icon" width="15px" height="15px"> Русский</a>
-                    <a href="index-am.html"><img src="src/graphics/png/lang-am.png" alt="lang-icon" width="15px" height="15px"> Հայերեն</a>
+                    <a href="?lang=en" data-set-lang="en"><img src="src/graphics/png/lang-en.png" alt="lang-icon" width="15px" height="15px"> English</a>
+                    <a href="?lang=ru" data-set-lang="ru"><img src="src/graphics/png/lang-ru.png" alt="lang-icon" width="15px" height="15px"> Русский</a>
+                    <a href="?lang=am" data-set-lang="am"><img src="src/graphics/png/lang-am.png" alt="lang-icon" width="15px" height="15px"> Հայերեն</a>
                 </div>
             </div>
         </nav>
-        <button class="burger" aria-label="Открыть меню" aria-expanded="false">
+        <button class="burger" aria-label="Открыть меню" aria-expanded="false" data-i18n="[aria-label]nav-open-label">
             <span class="burger__line"></span>
             <span class="burger__line"></span>
             <span class="burger__line"></span>
@@ -117,7 +120,7 @@
         <div id="modal-form" class="modal hidden">
             <div class="modal-content">
                 <button class="close-modal">&times;</button>
-                <h2>Свяжитесь с нами</h2>
+                <h2 data-i18n="modal-title">Свяжитесь с нами</h2>
                 <form class="modal-form hidden"
                     action="send-form.php"
                     method="POST"
@@ -125,11 +128,11 @@
 
                     <div class="form-status" aria-live="polite"></div>
 
-                    <input type="text" name="full_name" placeholder="Ваше имя" required />
-                    <input type="tel" name="phone" placeholder="Номер телефона" required />
-                    <input type="email" name="email" placeholder="E-mail (необязательно)" />
+                    <input type="text" name="full_name" placeholder="Ваше имя" required data-i18n="[placeholder]form-name-placeholder" />
+                    <input type="tel" name="phone" placeholder="Номер телефона" required data-i18n="[placeholder]form-phone-placeholder" />
+                    <input type="email" name="email" placeholder="E-mail (необязательно)" data-i18n="[placeholder]form-email-placeholder" />
 
-                    <input type="submit" value="Отправить заявку" class="submit-button" />
+                    <input type="submit" value="Отправить заявку" class="submit-button" data-i18n="[value]form-submit" />
                 </form>
             </div>
         </div>
@@ -139,12 +142,10 @@
     <main>
         <section class="hero-block hidden">
             <div class="hero-block__container">
-                <h1 class="hero-block__title"><span class="special-text">Импорт и платежи за рубеж</span> в современных
-                    реалиях</h1>
-                <h3 class="hero-block__subtitle">В условиях текущей мировой обстановки компании вынуждены искать альтернативные пути ввоза и вывоза товаров.</h3>
-                <p class="hero-block__description">Многие сталкиваются со сложностями при проведении платежей за приобретаемый товар. <br>
-                    В этой связи мы продолжаем активно работать и стараемся находить новые решения сложных задач клиентов.</p>
-                <p class="hero-block__description">На данный момент мы готовы предложить Вам ряд услуг, которые можно реализовать через наши представительства в России и Армении.</p>
+                <h1 class="hero-block__title" data-i18n="[html]hero-title">Надёжные решения для <span class="special-text">ветеринарии и лабораторной диагностики</span></h1>
+                <h3 class="hero-block__subtitle" data-i18n="hero-subtitle">Мы занимаемся импортом и поставкой ветеринарных лекарственных препаратов вакцин, лабораторного оборудования, диагностических тестов и расходных материалов.</h3>
+                <p class="hero-block__description"></p>
+                <!-- <p class="hero-block__description">Наша цель - обеспечить ветеринарных специалистов современными и эффективными решениями для профилактики, диагностики и лечения заболеваний животных.</p> -->
             </div>
             <div class="hero-block__image">
                 <img src="src/graphics/png/hero-block-image.png" alt="Hero block picture here"
@@ -152,39 +153,47 @@
             </div>
         </section>
         <section class="aboutus-block hidden">
-            <p id="aboutus" class="section-marker">О компании</p>
+            <p id="aboutus" class="section-marker" data-i18n="nav-about">О компании</p>
             <div class="aboutus-block__container">
-                <h1 class="aboutus-block__title"><span class="special-text">О компании</span></h1>
-                <h3 class="aboutus-block__subtitle">Мы эксперты в области ВЭД и надежный партнер в решении таможенных вопросов любой сложности</h3>
+                <h1 class="aboutus-block__title"><span class="special-text" data-i18n="about-title">О компании</span></h1>
+                <h3 class="aboutus-block__subtitle" data-i18n="about-subtitle">Мы сотрудничаем с ведущими мировыми производителями и предлагаем сертифицированную продукцию высокого качества для ветеринарных клиник, лабораторий, животноводческих хозяйств и специалистов отрасли.
+Наша цель — обеспечить ветеринарных специалистов современными и эффективными решениями для профилактики, диагностики и лечения заболеваний животных.</h3>
                 <div class="aboutus-block__stats hidden-2">
                     <div class="vertical-line "></div>
                     <div class="stat__item">
-                        <img src="src/graphics/png/aboutus-icon1.png" alt="clients-icon" class="stat__icon">
+                        <!-- <img src="src/graphics/png/aboutus-icon1.png" alt="clients-icon" class="stat__icon"> -->
                         <div class="stat__text">
-                            <h2>>100 Клиентов</h2>
-                            <h3>В России и за рубежом</h3>
+                            <h2 data-i18n="about-stat-clients-title">> 100 Клиентов</h2>
+                            <h3 data-i18n="about-stat-clients-text">По всему миру</h3>
                         </div>
                     </div>
                     <div class="stat__item">
-                        <img src="src/graphics/png/aboutus-icon2.png" alt="clients-icon" class="stat__icon">
+                        <!-- <img src="src/graphics/png/aboutus-icon2.png" alt="clients-icon" class="stat__icon"> -->
                         <div class="stat__text">
-                            <h2>>30 Стран</h2>
-                            <h3>География наших клиентов</h3>
+                            <h2 data-i18n="about-stat-countries-title">> 30 Стран</h2>
+                            <h3 data-i18n="about-stat-countries-text">География наших клиентов</h3>
                         </div>
                     </div>
                     <div class="stat__item">
-                        <img src="src/graphics/png/aboutus-icon3.png" alt="clients-icon" class="stat__icon">
+                        <!-- <img src="src/graphics/png/aboutus-icon3.png" alt="clients-icon" class="stat__icon"> -->
                         <div class="stat__text">
-                            <h2>>1000 Оформленных</h2>
-                            <h3>Разрешительных документов</h3>
+                            <h2 data-i18n="about-stat-docs-title">> 1000 Оформленных</h2>
+                            <h3 data-i18n="about-stat-docs-text">Разрешительных документов</h3>
                         </div>
                     </div>
                     <div class="stat__item">
-                        <img src="src/graphics/png/aboutus-icon4.png" alt="clients-icon" class="stat__icon">
+                        <!-- <img src="src/graphics/png/aboutus-icon4.png" alt="clients-icon" class="stat__icon"> -->
                         <div class="stat__text">
-                            <h2>>500 Подготовленных</h2>
-                            <h3>Таможенных оформлений</h3>
+                            <h2 data-i18n="about-stat-customs-title">> 500 Подготовленных</h2>
+                            <h3 data-i18n="about-stat-customs-text">Таможенных оформлений</h3>
                         </div>
+                    </div>
+                    <div class="aboutus-block__principles">
+                        <h3 data-i18n="about-principles-title">Основные принципы нашей работы:</h3>
+                        <p class="infocard__text" data-i18n="about-principle-quality">Качество: сертифицированная продукция от проверенных производителей.</p>
+                        <p class="infocard__text" data-i18n="about-principle-reliability">Надёжность: контроль качества, безопасности и соответствия требованиям отрасли.</p>
+                        <p class="infocard__text" data-i18n="about-principle-responsibility">Ответственность: профессиональный подход к каждой поставке и консультации.</p>
+                        <p class="infocard__text" data-i18n="about-principle-partnership">Партнёрство: долгосрочное сотрудничество и доверие клиентов.</p>
                     </div>
                 </div>
                 <div class="aboutus-block__illustration hidden-3">
@@ -193,35 +202,34 @@
             </div>
         </section>
         <section class="solutions-block hidden">
-            <p id="solutions" class="section-marker">Решения</p>
+            <p id="solutions" class="section-marker" data-i18n="nav-products">Продукция</p>
             <div class="solutions-block__container">
-                <h1 class="solutions-block__title hidden-2"><span class="special-text">Как мы можем помочь?</span></h1>
-                <h3 class="solutions-block__subtitle hidden-2">Мы предоставляем обширный набор услуг, для решения вопросов
-                    разного характера</h3>
+                <h1 class="solutions-block__title hidden-2"><span class="special-text" data-i18n="products-title">Продукция</span></h1>
+                <h3 class="solutions-block__subtitle hidden-2" data-i18n="products-subtitle">Мы предлагаем широкий ассортимент решений для ветеринарных клиник, лабораторий, животноводческих хозяйств и специалистов отрасли.</h3>
                 <div class="solutions-block__infocards">
                     <div class="infocard hidden-3">
-                        <h2 class="infocard__header">Импорт товаров</h2>
+                        <h2 class="infocard__header" data-i18n="products-card-vet-title">Ветеринарные препараты</h2>
                         <div class="infocard__line"></div>
-                        <!-- <p class="infocard__text">Таможенный выпуск</p> -->
-                        <p class="infocard__text">Полная консультация</p>
-                        <p class="infocard__text">Оформление импортной декларации из третьих стран</p>
-                        <p class="infocard__text">Получение разрешений и сертификации</p>
-                        <p class="infocard__text">Расчет таможенной пошлины, государственной пошлины и НДС по ТН ВЭД
-                            кодам</p>
-                        <p class="infocard__text">Предварительная проверка документов</p>
+                        <p class="infocard__text" data-i18n="products-card-vet-item-1">ветеринарные лекарственные препараты</p>
+                        <p class="infocard__text" data-i18n="products-card-vet-item-2">вакцины</p>
+                        <p class="infocard__text" data-i18n="products-card-vet-item-3">витамины и кормовые добавки</p>
+                        <!-- <p class="infocard__text">дезинфицирующие средства</p> -->
                     </div>
                     <div class="infocard hidden-3">
-                        <h2 class="infocard__header">Экспорт товаров</h2>
+                        <h2 class="infocard__header" data-i18n="products-card-diagnostics-title">Диагностические решения</h2>
                         <div class="infocard__line"></div>
-                        <p class="infocard__text">Оформление экспортной декларации в другие страны</p>
-                        <p class="infocard__text">Оформление транзитной декларации (в ЕАЭС)</p>
+                        <p class="infocard__text" data-i18n="products-card-diagnostics-item-1">экспресс-диагностические тесты</p>
+                        <p class="infocard__text" data-i18n="products-card-diagnostics-item-2">лабораторные реагенты</p>
+                        <!-- <p class="infocard__text">расходные материалы</p> -->
+                        <p class="infocard__text" data-i18n="products-card-diagnostics-item-3">решения для точной диагностики заболеваний животных</p>
                     </div>
                     <div class="infocard hidden-3">
-                        <h2 class="infocard__header">Дополнительно</h2>
+                        <h2 class="infocard__header" data-i18n="products-card-equipment-title">Лабораторное оборудование</h2>
                         <div class="infocard__line"></div>
-                        <p class="infocard__text">Регистрация таможенной папки для всех, от маленького ИП до большой
-                            компании</p>
-                        <p class="infocard__text">Поиск ТН ВЭД кодов по наименованию товаров</p>
+                        <p class="infocard__text" data-i18n="products-card-equipment-item-1">оборудование для ветеринарных лабораторий</p>
+                        <p class="infocard__text" data-i18n="products-card-equipment-item-2">подбор под задачи клиники или хозяйства</p>
+                        <!-- <p class="infocard__text">расходные материалы для регулярной работы</p> -->
+                        <p class="infocard__text" data-i18n="products-card-equipment-item-3">сервисное и послепродажное сопровождение</p>
                     </div>
                 </div>
                 <div class="solutions-block__statements">
@@ -229,142 +237,118 @@
                         <img src="src/graphics/png/solutions-1-statement-icon.png" alt="international-delivery-statement-icon"
                             class="statement__icon">
                         <div class="statement__text">
-                            <h2>Международная доставка</h2>
-                            <p>Наша компания оказывает полный спектр услуг по организации международной доставки товаров.
-                                Мы берем на себя ответственность за поставку продукции из любой точки мира в Россию и
-                                страны Европы,
-                                обеспечивая надежность, прозрачность и соблюдение всех нормативных требований на каждом
-                                этапе логистической цепочки.
-                            </p>
+                            <h2 data-i18n="products-statement-certified-title">Сертифицированная продукция</h2>
+                            <p data-i18n="products-statement-certified-text">Мы поставляем только сертифицированную продукцию от проверенных производителей и гарантируем её качество, надёжность и безопасность.</p>
                         </div>
                     </div>
                     <div class="statement hidden-2">
                         <img src="src/graphics/png/solutions-2-statement-icon.png" alt="agent-support-statement-icon"
                             class="statement__icon">
                         <div class="statement__text">
-                            <h2>Агентское сопровождение</h2>
-                            <p>Наши специалисты оказывают всестороннюю поддержку: от подбора оптимальных маршрутов и
-                                перевозчиков
-                                до согласования коммерческих условий между сторонами.</p>
+                            <h2 data-i18n="products-statement-manufacturers-title">Мировые производители</h2>
+                            <p data-i18n="products-statement-manufacturers-text">Мы сотрудничаем с ведущими международными поставщиками, чтобы предлагать рынку Армении современные ветеринарные и лабораторные решения.</p>
                         </div>
                     </div>
                     <div class="statement hidden-2">
                         <img src="src/graphics/png/solutions-3-statement-icon.png" alt="documentation-licenses-statement-icon"
                             class="statement__icon">
                         <div class="statement__text">
-                            <h2>Документация и Лицензирование</h2>
-                            <p>Важной частью нашей работы является содействие в получении всех необходимых лицензий,
-                                разрешений и сертификатов,
-                                которые требуются для ввоза продукции на целевые рынки. Мы тщательно следим за
-                                соблюдением требований
-                                регуляторов, что позволяет нашим клиентам выходить на внешние рынки без лишних задержек
-                                и рисков.
-                            </p>
+                            <h2 data-i18n="products-statement-diagnostics-title">Точная диагностика</h2>
+                            <p data-i18n="products-statement-diagnostics-text">Мы убеждены, что здоровье животных начинается с качественных препаратов и точной диагностики, поэтому уделяем особое внимание лабораторным тестам, реагентам и оборудованию.</p>
                         </div>
                     </div>
                     <div class="statement hidden-2">
                         <img src="src/graphics/png/solutions-4-statement-icon.png" alt="logistics-customs-statement-icon"
                             class="statement__icon">
                         <div class="statement__text">
-                            <h2>Таможенное оформление и Логистика</h2>
-                            <p>Мы организуем транспортировку товаров с учетом индивидуальных требований - как по
-                                территории России, так и за её пределами.
-                                Мы котролируем процесс на всех этапах, чтобы гарантировать своевременность и
-                                безопасность поставок.
-                            </p>
+                            <h2 data-i18n="products-statement-approach-title">Индивидуальный подход</h2>
+                            <p data-i18n="products-statement-approach-text">Мы учитываем задачи каждого клиента и помогаем подобрать продукцию для профилактики, диагностики и лечения заболеваний животных.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <section class="services-block hidden">
-            <p id="services" class="section-marker">Услуги</p>
-            <h1 class="services-block__title hidden-2"><span class="special-text">Как мы работаем?</span></h1>
-            <h3 class="services-block__subtitle hidden-2">Мы готовы предложить вам две основные схемы взаимодействия.</h3>
+            <p id="services" class="section-marker" data-i18n="nav-services">Услуги</p>
+            <h1 class="services-block__title hidden-2"><span class="special-text" data-i18n="services-title">Наши услуги</span></h1>
+            <h3 class="services-block__subtitle hidden-2" data-i18n="services-subtitle">Мы сопровождаем клиентов от подбора продукции до запуска оборудования и обучения персонала.</h3>
             <div class="infocard hidden">
-                <h2 class="infocard__header infocard__header--highlighted hidden-2">1. Выступим в качестве промежуточного звена</h2>
+                <h2 class="infocard__header infocard__header--highlighted hidden-2" data-i18n="services-card-supply-title">1. Поставка ветеринарной продукции</h2>
                 <div class="infocard__line hidden"></div>
                 <div class="infocard__items">
                     <div class="infocard__item hidden-2">
-                        <h3>Мы можем заключить договор купли-продажи с поставщиком.</h3>
-                        <p class="infocard__description">Процесс осуществляется через нашу компанию в Армении, если есть сложности с заключением прямого контракта
-                        или поставщик не готов продавать/отгружать грузы напрямую в Россию.</p>
+                        <h3 data-i18n="services-card-supply-item-1-title">Импорт и поставка ветеринарных препаратов.</h3>
+                        <p class="infocard__description" data-i18n="services-card-supply-item-1-text">Организуем поставки лекарственных препаратов, вакцин, витаминов, кормовых добавок, диагностических тестов, реагентов и расходных материалов.</p>
                     </div>
                     <div class="infocard__item hidden-2">
-                        <h3>Выступим в качестве платежного агента.</h3>
-                        <p class="infocard__description">На основании агентского контракта, если трудности состоят только в проведенеии платежей. 
-                        Наличие открытых счетов в различных банках позволяет нам проводить платежи фактически без задержек</p>
+                        <h3 data-i18n="services-card-supply-item-2-title">Профессиональная консультационная поддержка.</h3>
+                        <p class="infocard__description" data-i18n="services-card-supply-item-2-text">Помогаем подобрать решения под задачи ветеринарных клиник, лабораторий, животноводческих хозяйств и специалистов отрасли.</p>
                     </div>
                 </div>
                 <div class="infocard__statements hidden">
                     <div class="statement hidden-2">
                         <img src="src/graphics/png/service-1-1-statement-icon.png" alt="service-1-1-statement" class="statement__icon smaller-icon">
-                        <p class="statement__text middle-text">Вы заключаете прямой договор с Продавцом товаров</p>
+                        <p class="statement__text middle-text" data-i18n="services-supply-step-1">Подбираем сертифицированную продукцию под потребности клиента</p>
                     </div>
                     <div class="statement hidden-3">
                         <img src="src/graphics/png/service-1-2-statement-icon.png" alt="service-1-2-statement" class="statement__icon smaller-icon">
-                        <p class="statement__text middle-text">Мы на основе агентского договора с Вами производим Поставщику оплату за груз</p>
+                        <p class="statement__text middle-text" data-i18n="services-supply-step-2">Работаем с проверенными производителями и контролируем качество поставок</p>
                     </div>
                     <div class="statement hidden-2">
                         <img src="src/graphics/png/service-1-3-statement-icon.png" alt="service-1-3-statement" class="statement__icon smaller-icon">
-                        <p class="statement__text middle-text">Продавец отправляет груз Вам как при обычной поставке, либо мы организуем забор груза</p>
+                        <p class="statement__text middle-text" data-i18n="services-supply-step-3">Обеспечиваем оперативные поставки и прозрачное сопровождение</p>
                     </div>
                     <div class="statement hidden-3">
                         <img src="src/graphics/png/service-1-4-statement-icon.png" alt="service-1-4-statement" class="statement__icon smaller-icon">
-                        <p class="statement__text middle-text">По прибытю товара на склад временного хрангения(СВХ) вы или мы, как таможенный представитель, 
-                            проводим таможенное оформление и выпускаем груз в свободное обращение</p>
-                        <p class="infocard__description"></p>
+                        <p class="statement__text middle-text" data-i18n="services-supply-step-4">Предлагаем индивидуальный подход и долгосрочное сотрудничество</p>
                         </div>
-                </div>    
+                </div>
             </div>
             <div class="infocard hidden">
-                <h2 class="infocard__header infocard__header--highlighted hidden-2">2. Полный пакет под ключ</h2>
+                <h2 class="infocard__header infocard__header--highlighted hidden-2" data-i18n="services-card-equipment-title">2. Лабораторное оборудование под ключ</h2>
                 <div class="infocard__line"></div>
                 <div class="infocard__item hidden-2">
-                    <h3>Полностью возьмем на себя все процессы по закупке и доставке.</h3>
-                    <p class="infocard__description">На выходе вы получаете товар, полностью выпущенный в свободное обращение на территории ЕАЭС. 
-                        Оставьте нам заключение внешнеторгового контракта и составление других коммерческих документов!                    </p>
+                    <h3 data-i18n="services-card-equipment-intro-title">Помогаем выбрать, внедрить и обслуживать оборудование.</h3>
+                    <p class="infocard__description" data-i18n="services-card-equipment-intro-text">Подбираем лабораторное оборудование под реальные процессы клиента, организуем установку, ввод в эксплуатацию и дальнейшее сопровождение.</p>
                 </div>
                 <div class="infocard__statements hidden">
                     <div class="statement hidden-3">
                         <img src="src/graphics/png/service-2-1-statement-icon.png" alt="service-2-1-statement-icon" class="statement__icon smaller-icon">
                         <div class="statement__text mL10">
-                            <h3>Организация перевозки груза</h3>
-                            <p  class="infocard__description">Мы можем предложить гибкие ставки, подходиящие конкретно под Ваш запрос, на доставку различными видами транспорта из Китая, 
-                                Европы, в том числе сборную и мультимодальную перевозки
-                            </p>
+                            <h3 data-i18n="services-equipment-step-1-title">Подбор оборудования</h3>
+                            <p  class="infocard__description" data-i18n="services-equipment-step-1-text">Анализируем задачи клиники, лаборатории или хозяйства и предлагаем оборудование с подходящими характеристиками.</p>
                         </div>
                     </div>
                     <div class="statement hidden-2">
                         <img src="src/graphics/png/service-2-2-statement-icon.png" alt="service-2-2-statement-icon" class="statement__icon smaller-icon">
                         <div class="statement__text mL10">
-                            <h3>Оформление всех требуемых разрешительных документов</h3>
-                            <p class="infocard__description">Сертификаты и декларации о соответствии, нотификации ФСБ и КНБ, лицензии, заключения и др.</p>
+                            <h3 data-i18n="services-equipment-step-2-title">Установка и ввод в эксплуатацию</h3>
+                            <p class="infocard__description" data-i18n="services-equipment-step-2-text">Помогаем запустить оборудование и подготовить его к стабильной работе в лабораторных процессах.</p>
                         </div>
                     </div>
                     <div class="statement hidden-3">
                         <img src="src/graphics/png/service-2-3-statement-icon.png" alt="service-2-3-statement-icon" class="statement__icon smaller-icon">
                         <div class="statement__text mL10">
-                            <h3>Весь процесс таможенного оформления</h3>
-                            <p class="infocard__description">Начиная от размещения груза на таможенном терминале - СВХ и заканчивая непосредственно выпуском и выдачей груза с СВХ или доставкой до конечного адреса</p>
+                            <h3 data-i18n="services-equipment-step-3-title">Техническое обслуживание</h3>
+                            <p class="infocard__description" data-i18n="services-equipment-step-3-text">Предоставляем гарантийное и послепродажное сопровождение, чтобы оборудование работало надёжно.</p>
                         </div>
                     </div>
                     <div class="statement hidden-2">
                         <img src="src/graphics/png/service-2-4-statement-icon.png" alt="service-2-4-statement-icon" class="statement__icon smaller-icon">
                         <div class="statement__text mL10">
-                            <h3>Валютные платежи</h3>
-                            <p class="infocard__description">И валютный контроль</p>
+                            <h3 data-i18n="services-equipment-step-4-title">Обучение персонала</h3>
+                            <p class="infocard__description" data-i18n="services-equipment-step-4-text">Обучаем специалистов работе с оборудованием и консультируем по корректному использованию решений.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <section class="feedback-block hidden">
-            <p id="contacts" class="section-marker">Контакты</p>
+            <p id="contacts" class="section-marker" data-i18n="nav-contacts">Контакты</p>
             <div class="feedback-block__container">
-                <h1 class="feedback-block__title hidden-2"><span class="special-text">Свяжитесь с нами</span><br>Уже сейчас</h1>
-                <h3 class="feedback-block__subtitle hidden-2">Консультация бесплатно!</h3>
-                <h3 class="feedback-block__grey hidden-2">Заполните форму обратной связи. <br>Мы свяжемся с вами и обсудим все интересующие вас детали и внутренние процессы.</h3>
+                <h1 class="feedback-block__title hidden-2" data-i18n="[html]feedback-title"><span class="special-text">Свяжитесь с нами</span><br>Уже сейчас</h1>
+                <h3 class="feedback-block__subtitle hidden-2" data-i18n="feedback-subtitle">Подберём решение под ваши задачи.</h3>
+                <h3 class="feedback-block__grey hidden-2" data-i18n="[html]feedback-text">Заполните форму обратной связи. <br>Мы свяжемся с вами, уточним потребности и предложим подходящие препараты, тесты, реагенты или оборудование.</h3>
                 
                 <form class="feedback-block__form hidden"
                     action="send-form.php"
@@ -373,14 +357,14 @@
 
                     <div class="form-status" aria-live="polite"></div>
 
-                    <input type="text" name="full_name" placeholder="Ваше имя" required />
-                    <input type="tel" name="phone" placeholder="Номер телефона" required />
-                    <input type="email" name="email" placeholder="E-mail (необязательно)" />
+                    <input type="text" name="full_name" placeholder="Ваше имя" required data-i18n="[placeholder]form-name-placeholder" />
+                    <input type="tel" name="phone" placeholder="Номер телефона" required data-i18n="[placeholder]form-phone-placeholder" />
+                    <input type="email" name="email" placeholder="E-mail (необязательно)" data-i18n="[placeholder]form-email-placeholder" />
                     <!-- <textarea name="message" placeholder="Комментарий (необязательно)" rows="3"></textarea> -->
 
                     <input type="text" name="hp" class="hp-field" autocomplete="off" tabindex="-1" />
 
-                    <input type="submit" value="Отправить заявку" class="submit-button" />
+                    <input type="submit" value="Отправить заявку" class="submit-button" data-i18n="[value]form-submit" />
                 </form>
                 
                 <div class="feedback-block__contacts hidden">
@@ -398,22 +382,27 @@
         <div class="footer-block__wrapper">
             <a href="#"><img src="src/graphics/png/header-logo.png" alt="footer-logo-here" class="footer-block__logo"></a>
             <div class="footer-block__container footer-block__container_addres">
-                <h3 class="footer-block__title">Наши офисы</h3>
-                <a href="https://yandex.com/maps/-/CHv3nVic" class="footer-block__addres-text">Армения, Ереван, Вагарша Вагаршяна 12/1</a>
+                <h3 class="footer-block__title" data-i18n="footer-offices-title">Наши офисы</h3>
+                <a href="https://yandex.com/maps/-/CHv3nVic" class="footer-block__addres-text" data-i18n="footer-address">Армения, Ереван, Вагарша Вагаршяна 12/1</a>
             </div>
             <div class="footer-block__container footer-block__container_mobile-hidden">    
                 <nav class="footer-block__nav">
-                <a href="#aboutus" class="footer-block__page-link">О компании</a>
-                <a href="#solutions" class="footer-block__page-link">Решения</a>
-                <a href="#services" class="footer-block__page-link">Услуги</a>
-                <a href="#contacts" class="footer-block__page-link">Контакты</a>
+                <a href="#aboutus" class="footer-block__page-link" data-i18n="nav-about">О компании</a>
+                <a href="#solutions" class="footer-block__page-link" data-i18n="nav-products">Продукция</a>
+                <a href="#services" class="footer-block__page-link" data-i18n="nav-services">Услуги</a>
+                <a href="#contacts" class="footer-block__page-link" data-i18n="nav-contacts">Контакты</a>
                 </nav>
-                <h3 class="footer-block__text">© <span id="current-year"></span>. Все права защищены</h3>
+                <h3 class="footer-block__text">© <span id="current-year"></span>. <span data-i18n="footer-rights">Все права защищены</span></h3>
             </div>
         </div>
     </footer>
 
+    <button class="backer" type="button" aria-label="Back to top" title="Back to top" data-i18n="[aria-label]backer-label;[title]backer-label">
+        <span aria-hidden="true">&uarr;</span>
+    </button>
+
     <script src="script.js"></script>
+    <script src="scripts/translation.js"></script>
 </body>
 
 </html>

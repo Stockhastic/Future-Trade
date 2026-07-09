@@ -2,133 +2,242 @@
 
 .solutions-block {
     position: relative;
-    margin: 130px auto;
-    // outline: 1px solid pink;
+    margin: $sectionSpacing auto;
 
     &__container {
         display: grid;
-        grid-template-areas: 
-        "title title"
-        "subtitle subtitle"
-        "infocards statements";
-        column-gap: 20px;
-        grid-template-columns: 1fr 1.5fr;
+        grid-template-areas:
+            "title title"
+            "subtitle subtitle"
+            "infocards statements";
+        grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+        gap: 22px clamp(24px, 4vw, 54px);
+        align-items: stretch;
     }
 
     &__title {
         grid-area: title;
+        margin: 0;
     }
+
     &__subtitle {
         grid-area: subtitle;
-        margin-bottom: 55px;
+        max-width: 980px;
+        margin: 0;
+        color: $textMutedColor;
+        font-family: $mainFontRegular;
     }
+
     &__infocards {
         grid-area: infocards;
+        display: grid;
+        gap: 18px;
+        align-self: stretch;
     }
-    &__statements {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        grid-area: statements;
-    }
-}
 
-.infocard{
-    position: relative;
-    background-color: $infocardBGColor;
-    border: 1px solid $infocardBorderColor;
-    transition: all 0.23s ease-in-out;
-    border-radius: 13px;
-    padding: 25px 20px;
-    margin: 10px 0;
-    &__header{
-        margin-bottom: 10px;
-    }
-    &__line{
-        top: 0;
-        height: 1px;
-        background-color: $infocardDividerColor;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    &__text{
-        margin-left: 10px;
-        margin-bottom: 5px;
-        &::before{
-            content: "•";
-            margin-right: 10px;
-            color: #fff;
+    &__statements {
+        grid-area: statements;
+        align-self: stretch;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, minmax(min-content, 1fr));
+        align-content: stretch;
+        gap: 18px;
+
+        & > .statement {
+            align-items: center;
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
         }
     }
-    &__description{
-        color: $grey;
-        font-size: 16px;
-        margin: 6px 0;
-        text-align: justify;
+}
+
+.infocard {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: clamp(22px, 2.2vw, 32px);
+    border: 1px solid $infocardBorderColor;
+    border-radius: $radiusMedium;
+    background: linear-gradient(145deg, $surfaceElevatedColor, $infocardBGColor);
+    box-shadow: $shadowCard;
+    transition: transform 0.2s $beziere, border-color 0.2s $beziere;
+
+    &:hover {
+        transform: translateY(-3px);
+        border-color: #237895;
     }
-    &__item{
-        margin: 18px 0;
+
+    &__header {
+        margin-bottom: 14px;
+        color: $white;
+        font-family: $mainFontMedium;
+        line-height: 1.2;
+    }
+
+    &__line {
+        width: 100%;
+        height: 1px;
+        margin-bottom: 14px;
+        background-color: $infocardDividerColor;
+    }
+
+    &__text {
+        display: flex;
+        gap: 10px;
+        margin: 0 0 8px;
+        color: $textMutedColor;
+        line-height: 1.55;
+
+        &::before {
+            content: "";
+            flex: 0 0 auto;
+            width: 6px;
+            height: 6px;
+            margin-top: 9px;
+            border-radius: 50%;
+            background: $secondaryColor;
+            box-shadow: 0 0 14px rgba($secondaryColor, 0.55);
+        }
+    }
+
+    &__description {
+        margin: 8px 0 0;
+        color: $textMutedColor;
+        font-size: 16px;
+        line-height: 1.65;
+        text-align: left;
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    &__item {
+        margin: 0;
+
+        & > h3 {
+            color: $textSoftColor;
+            font-family: $mainFontRegular;
+        }
     }
 }
 
-.statement{
+.statement {
     display: flex;
-    margin: 15px;
+    gap: 16px;
+    align-items: flex-start;
     align-content: center;
+    min-height: 100%;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid $surfaceBorderColor;
+    border-radius: $radiusMedium;
+    background: $surfaceColor;
 
-    &__icon{
-        height: 69px;
-        width: 74px;    
+    &__icon {
+        flex: 0 0 auto;
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
     }
 
-    &__text{
-        text-align:justify;
-        & > h2{
-            font-size: 24px;
-            margin-bottom: 5px;
+    &__text {
+        flex: 1 1 auto;
+        min-width: 0;
+        color: $textMutedColor;
+        line-height: 1.6;
+        text-align: left;
+
+        & > h2 {
+            margin-bottom: 8px;
+            color: $white;
             font-family: $mainFontMedium;
+            font-size: 22px;
+        }
+
+        & > h3 {
+            margin-bottom: 6px;
+            color: $white;
+            font-family: $mainFontMedium;
+        }
+    }
+}
+
+@media ($tabletLayoutScreen) {
+    .solutions-block {
+        &__container {
+            grid-template-areas:
+                "title"
+                "subtitle"
+                "infocards"
+                "statements";
+            grid-template-columns: 1fr;
+        }
+
+        &__statements {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-rows: none;
+
+            & > .statement {
+                padding: 20px;
+                border: 1px solid $surfaceBorderColor;
+                border-radius: $radiusMedium;
+                background: $surfaceColor;
+            }
         }
     }
 }
 
 @media ($mobileScreen) {
     .solutions-block {
-        margin: 50px 1px;
-        & > .section-marker{
-            margin: 20px;
-            translate: 0 -50px;;
+        margin: $sectionSpacingMobile auto;
+
+        & > .section-marker {
+            margin: 0 0 18px;
+            translate: none;
         }
+
         &__container {
-            // margin: 20px;
             grid-template-areas:
-            "title"
-            "subtitle"
-            "infocards"
-            "statements";
+                "title"
+                "subtitle"
+                "infocards"
+                "statements";
             grid-template-columns: 1fr;
-            column-gap: 10px;
+            row-gap: 22px;
         }
-        &__statements{
-            margin: 30px 0;
-            & > .statement {
-                margin: 0;
-                margin-top: 20px;
-            }
+
+        &__statements {
+            grid-template-columns: 1fr;
+            margin: 0;
         }
+
         &__title {
-            font-size: $mobileH1Size;
+            font-size: clamp(34px, 10vw, $mobileH1Size);
         }
-        &__subtitle{
-            margin: 20px auto;
+
+        &__subtitle {
+            margin: 0;
         }
     }
 
-    .statement__text{
+    .infocard__items {
+        grid-template-columns: 1fr;
+    }
+
+    .statement {
+        padding: 18px;
+        gap: 14px;
+    }
+
+    .statement__text {
         text-align: start;
-        flex: 1 1 auto;    /* разрешаем блоку расти и ужиматься */
-        min-width: 0;      /* ключевой приём, чтобы flex-элемент мог стать уже содержимого */
-        
-        /* дополнительно, если у вас где-то слова без пробелов: */
         overflow-wrap: break-word;
     }
 }
