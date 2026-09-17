@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nav          = document.querySelector('.header__nav');
     const closeNavBtn  = document.querySelector('.nav-close');
     const navLinks     = document.querySelectorAll('.header__page-link');
-    const desktopQuery = window.matchMedia('(min-width: 1121px)');
+    const desktopQuery = window.matchMedia('(min-width: 1281px)');
 
     if (!burger || !nav) {
         return;

@@ -24,6 +24,40 @@ nav {
 }
 
 .header {
+    &__contacts {
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__phone {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        margin: 0;
+        color: $white;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.2;
+        white-space: nowrap;
+
+        &:hover {
+            color: $secondaryColor;
+        }
+
+        &:focus-visible {
+            outline: 3px solid rgba($secondaryColor, 0.35);
+            outline-offset: 3px;
+        }
+    }
+
+    &__phone-icon {
+        flex: 0 0 auto;
+        color: $secondaryColor;
+    }
+
     &__page-link {
         margin: 0;
         padding: 10px 12px;
@@ -415,6 +449,10 @@ nav {
     }
 
     .header {
+        &__phone {
+            font-size: 14px;
+        }
+
         &__logo {
             width: 90px;
             margin: 0;
@@ -450,7 +488,26 @@ nav {
 }
 
 @media ($smallMobileScreen) {
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "brand toggle"
+            "contacts contacts";
+        height: auto;
+
+        & > a {
+            grid-area: brand;
+            justify-self: start;
+        }
+    }
+
     .header {
+        &__contacts {
+            grid-area: contacts;
+            justify-content: center;
+        }
+
         &__logo {
             width: 82px;
         }
@@ -467,6 +524,7 @@ nav {
     }
 
     .burger {
+        grid-area: toggle;
         width: 46px;
         height: 46px;
     }
